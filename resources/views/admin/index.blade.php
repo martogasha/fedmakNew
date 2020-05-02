@@ -1,27 +1,38 @@
 @include('Partials.header')
-
+<ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item"><a href="index.html">Products</a></li>
+    <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
+</ul>
+<div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
+<div class="content-i">
+    <div class="content-box">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="element-wrapper">
                                 <h6 class="element-header">Dashboard</h6>
                                 <div class="element-content">
                                     <div class="row">
-                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="#">
+                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('property')}}">
                                                 <div class="label">Properties</div>
-                                                <div class="value">57</div>
+                                                <div class="value">{{\App\Property::count()}}</div>
                                             </a>
                                         </div>
 
-                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="#">
+                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('tenantDetails')}}">
                                                 <div class="label">Tenants</div>
                                                 <div class="value">557</div>
                                             </a>
                                         </div>
+
                                         <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="#">
-                                                <div class="label">Tenant Details</div>
-                                                <i class="fa fa-book fa-3x" aria-hidden="true">
+                                                <div class="label">Payment & Billing</div>
+                                                <i class="fa fa-dollar fa-3x" aria-hidden="true">
                                                 </i>
                                             </a>
                                         </div>
                                         <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="#">
-                                                <div class="label">Payment & Billing</div>
+                                                <div class="label">Service Bills</div>
                                                 <i class="fa fa-dollar fa-3x" aria-hidden="true">
                                                 </i>
                                             </a>
@@ -32,6 +43,12 @@
                                                     <div class="trending trending-up-basic"><span>New Message</span></div>
                                                 </i>
 
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="#">
+                                                <div class="label">Reports</div>
+                                                <i class="fa fa-book fa-3x" aria-hidden="true">
+                                                </i>
                                             </a>
                                         </div>
                                     </div>

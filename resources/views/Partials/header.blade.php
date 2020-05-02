@@ -11,15 +11,16 @@
     <link href="favicon.png" rel="shortcut icon">
     <link href="apple-touch-icon.png" rel="apple-touch-icon">
     <link href="http://fast.fonts.net/cssapi/487b73f1-c2d1-43db-8526-db577e4c822b.css" rel="stylesheet">
-    <link href="bower_components/select2/dist/css/select2.min.css" rel="stylesheet">
-    <link href="bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-    <link href="bower_components/dropzone/dist/dropzone.css" rel="stylesheet">
-    <link href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
-    <link href="bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="bower_components/slick-carousel/slick/slick.css" rel="stylesheet">
-    <link href="css/main5739.css?version=4.5.0" rel="stylesheet">
+    <link href="{{asset('bower_components/select2/dist/css/select2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('bower_components/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+    <link href="{{asset('bower_components/dropzone/dist/dropzone.css')}}" rel="stylesheet">
+    <link href="{{asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('bower_components/fullcalendar/dist/fullcalendar.min.css')}}" rel="stylesheet">
+    <link href="{{asset('bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css')}}" rel="stylesheet">
+    <link href="{{asset('bower_components/slick-carousel/slick/slick.css')}}" rel="stylesheet">
+    <link href="{{asset('css/main5739.css')}}?version=4.5.0" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </head>
 <body class="menu-position-side menu-side-left full-screen with-content-panel">
@@ -99,7 +100,7 @@
     </div>
     <div class="layout-w">
         <div class="menu-mobile menu-activated-on-click color-scheme-dark">
-            <div class="mm-logo-buttons-w"><a class="mm-logo" href="{{url('/')}}"><img src="img/logo.png"><span>Fedmak Agency</span></a>
+            <div class="mm-logo-buttons-w"><a class="mm-logo" href="{{url('admin')}}"><img src="img/logo.png"><span>Fedmak Agency</span></a>
                     <div class="content-panel-open">
                         <div class="os-icon os-icon-grid-circles"></div>
                     </div>
@@ -108,7 +109,7 @@
         <div class="content-w">
             <div class="top-bar color-scheme-transparent">
                 <div class="menu-w color-scheme-light color-style-transparent menu-position-side menu-side-left menu-layout-compact sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link">
-                    <div class="logo-w"><a class="logo" href="{{url('/')}}">
+                    <div class="logo-w"><a class="logo" href="{{url('admin')}}">
                             <div class="logo-element"></div>
                             <div class="logo-label">Fedmak Agency</div>
                         </a></div>
@@ -160,33 +161,20 @@
                                 </div>
                                 <div class="bg-icon"><i class="os-icon os-icon-wallet-loaded"></i></div>
                                 <ul>
-                                    <li><a href="users_profile_big.html"><i
+                                    <li><a href="{{url('profile')}}"><i
                                                 class="os-icon os-icon-user-male-circle2"></i><span>Profile Details</span></a>
                                     </li>
 
-                                    <li><a href="#"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a></li>
+                                    <li>
+                                        <form id="logoutForm" action="{{route('logout')}}" method="post" >
+                                            @csrf
+                                            <a href="#" onclick="document.getElementById('logoutForm').submit();"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a>
+                                        </form>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="index.html">Products</a></li>
-                <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
-            </ul>
-            <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
-            <div class="content-i">
-                <div class="content-box">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="element-wrapper">
-                                <div class="element-actions">
-                                    <form class="form-inline justify-content-sm-end"><select
-                                            class="form-control form-control-sm">
-                                            <option value="Pending">Today</option>
-                                            <option value="Active">Last Week</option>
-                                            <option value="Cancelled">Last 30 Days</option>
-                                        </select></form>
-                                </div>
+

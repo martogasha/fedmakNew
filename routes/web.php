@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,5 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('home', function () {
     return view('welcome');
 });
-Route::view('/','index');
+Route::get('admin','AdminController@index')->name('admin');
+Route::get('tenantDetails','TenantRecordsController@index');
+Route::resource('propertyUnits','PropertyHousesController');
+Route::resource('serviceBill','ServiceBillController');
+Route::resource('propertyHouseServiceBill','PropertyHouseServiceBillController');
+Route::get('profile','AdminProfileController@index');
+Route::view('test','test');
+Route::get('tenant','TenantController@index')->name('tenant');
 Route::view('tables','tables');
+Route::get('/','LoginController@index');
+Route::resource('property','PropertyController');
+Route::post('loginC','LoginController@login')->name('loginCustom');
+Auth::routes();
+
