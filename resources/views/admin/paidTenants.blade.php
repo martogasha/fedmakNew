@@ -1,4 +1,5 @@
 @include('Partials.header')
+<title>Paid Tenants</title>
 <div class="content-i">
     <div class="content-box">
         <div class="element-wrapper"><h6 class="element-header">REPORTS</h6>

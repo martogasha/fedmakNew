@@ -1,5 +1,7 @@
 @include('Partials.header')
 @include('flash-message')
+<title>Properties</title>
+
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
     <li class="breadcrumb-item"><a href="{{url('property')}}">property</a></li>

@@ -1,5 +1,6 @@
 @include('Partials.header')
 @include('flash-message')
+<title>Service Bills</title>
 <div class="content-i">
     <div class="content-box">
         <div class="element-wrapper"><h6 class="element-header">Service Bills</h6>

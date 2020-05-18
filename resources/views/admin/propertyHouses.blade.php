@@ -1,5 +1,7 @@
 @include('Partials.header')
 @include('flash-message')
+<title id="getTitle"></title>
+
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
     <li class="breadcrumb-item"><a href="index.html">Products</a></li>
@@ -118,6 +120,7 @@
     $('.element-header').append($propertyName);
     $('#createServiceBillButton').append($propertyName);
     $('.onboarding-title').append($propertyName);
+    $('#getTitle').append($propertyName);
     $('#getPropertyId').val($('#propertyId').val());
 </script>
 </body>

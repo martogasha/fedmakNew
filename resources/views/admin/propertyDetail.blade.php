@@ -1,4 +1,6 @@
 @include('Partials.header')
+<title>{{$property->name}} Properties Details</title>
+
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
     <li class="breadcrumb-item"><a href="index.html">Products</a></li>
