@@ -22,7 +22,7 @@
                                 </div>
                                 <hr>
                                 <div class="order-details-box">
-                                    <div class="order-main-info"><span><b>Number of Houses </b></span><strong>10 <a href="{{url('propertyUnits',$property->id)}}"><button class="btn btn-outline-secondary">View</button></a></strong></div>
+                                    <div class="order-main-info"><span><b>Number of Houses </b></span><strong>{{\App\PropertyUnit::where('property_id',$property->id)->count()}} <a href="{{url('propertyUnits',$property->id)}}"><button class="btn btn-outline-secondary">View</button></a></strong></div>
                                     <div class="order-sub-info"><span><b>Vacant</b></span><strong>5</strong></div>
                                 </div>
 

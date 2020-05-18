@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\PropertyUnit;
+use App\Test;
 use Illuminate\Http\Request;
 
 class PropertyHousesController extends Controller
@@ -31,4 +32,7 @@ class PropertyHousesController extends Controller
             'pUnits'=>$pUnits
         ]);
     }
+
+
 }
+

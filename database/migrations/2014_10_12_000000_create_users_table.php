@@ -18,9 +18,13 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('idno')->unique();
             $table->integer('phone')->unique();
-            $table->integer('role');
+            $table->integer('property_id')->nullable();
+            $table->integer('house_id')->nullable();
+            $table->string('houseType')->nullable();
+            $table->integer('amount')->nullable();
+            $table->integer('role')->default(2);
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->default(\Illuminate\Support\Facades\Hash::make('123456'));
             $table->rememberToken();
             $table->timestamps();
         });

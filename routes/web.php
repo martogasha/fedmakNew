@@ -18,8 +18,14 @@ Route::get('home', function () {
     return view('welcome');
 });
 Route::get('admin','AdminController@index')->name('admin');
-Route::get('tenantDetails','TenantRecordsController@index');
+Route::resource('tenantDetails','TenantRecordsController');
+Route::post('deleteUser/{id}','TenantRecordsController@deleteUser');
+Route::get('ajax','TenantController@getHouses');
+Route::get('ajax1','TenantController@getHouseDetails');
+Route::get('ajax2','BillController@getTenant');
+
 Route::resource('propertyUnits','PropertyHousesController');
+Route::get('getHouses','PropertyHousesController@getHouses');
 Route::resource('serviceBill','ServiceBillController');
 Route::resource('propertyHouseServiceBill','PropertyHouseServiceBillController');
 Route::get('profile','AdminProfileController@index');
@@ -29,5 +35,19 @@ Route::view('tables','tables');
 Route::get('/','LoginController@index');
 Route::resource('property','PropertyController');
 Route::post('loginC','LoginController@login')->name('loginCustom');
+Route::resource('bill','BillController');
+Route::post('deleteBill/{id}','BillController@deleteBill');
+
+Route::resource('paymentBilling','PaymentBillingController');
+Route::resource('reportView','ReportViewController');
+Route::resource('paidTenants','PaidTenantController');
+Route::resource('unpaidTenants','UnpaidTenantController');
+Route::resource('payments','PaymentController');
+Route::get('cashPayments','PaymentController@cashPayments');
+Route::resource('monthlyReview','MonthlyReviewController');
+Route::resource('sidebar','SidebarController');
+
+
+
 Auth::routes();
 

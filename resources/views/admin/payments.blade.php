@@ -10,60 +10,31 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="element-wrapper">
-                                <h6 class="element-header">Dashboard</h6>
-                                <div class="element-content">
-                                    <div class="row">
-                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('property')}}">
-                                                <div class="label">Properties</div>
-                                                <div class="value">{{\App\Property::count()}}</div>
-                                            </a>
-                                        </div>
+                    <h6 class="element-header">Payments</h6>
+                    <div class="element-content">
+                        <div class="row">
+                            <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('cashPayments')}}">
+                                    <div class="label">Cash</div>
+                                    <i class="fa fa-dollar fa-3x" aria-hidden="true">
+                                    </i>
+                                </a>
+                            </div>
 
-                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('tenantDetails')}}">
-                                                <div class="label">Tenants</div>
-                                                <div class="value">{{\App\User::where('role',2)->count()}}</div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('paymentBilling')}}">
-                                                <div class="label">Billing</div>
-                                                <i class="fa fa-dollar fa-3x" aria-hidden="true">
-                                                </i>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('payments')}}">
-                                                <div class="label">Payments</div>
-                                                <i class="fa fa-dollar fa-3x" aria-hidden="true">
-                                                </i>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('reportView')}}">
-                                                <div class="label">Monthly Report</div>
-                                                <i class="fa fa-dollar fa-3x" aria-hidden="true">
-                                                </i>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="#">
-                                                <div class="label">Reports</div>
-                                                <i class="fa fa-book fa-3x" aria-hidden="true">
-                                                </i>
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="#">
-                                                <div class="label">Messages</div>
-                                                <i class="fa fa-envelope fa-3x" aria-hidden="true">
-                                                    <div class="trending trending-up-basic"><span>New Message</span></div>
-                                                </i>
-
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                </div>
+                            <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('bill')}}">
+                                    <div class="label">Mpesa</div>
+                                    <div class="value"></div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('bill')}}">
+                                    <div class="label">Bank</div>
+                                    <div class="value"></div>
+                                </a>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="element-wrapper"><h6 class="element-header">General Monthly Review</h6>
@@ -143,7 +114,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     <div class="content-panel">
         <div class="content-panel-close"><i class="os-icon os-icon-close"></i></div>
@@ -158,29 +128,39 @@
         </div>
         <div class="element-wrapper"><h6 class="element-header">Property Owners</h6>
             <div class="element-box-tp">
-                @foreach($properties as $property)
                 <div class="profile-tile"><a class="profile-tile-box" href="users_profile_small.html">
                         <div class="pt-avatar-w"><img alt="" src="img/defaultAvatar.png"></div>
-                        <div class="pt-user-name">{{$property->lName}}</div>
+                        <div class="pt-user-name">John Mayers</div>
                     </a>
                     <div class="profile-tile-meta">
                         <ul>
-                            <li>Property:<strong>{{$property->name}}</strong></li>
-                            <li>No. of Houses:<strong><a href="apps_support_index.html">{{\App\PropertyUnit::where('property_id',$property->id)->count()}}</a></strong></li>
-                            <li>Location:<strong>{{$property->location}}</strong></li>
+                            <li>Property:<strong>Kikuyu Flats</strong></li>
+                            <li>No. of Houses:<strong><a href="apps_support_index.html">12</a></strong></li>
+                            <li>Location:<strong>Kikuyu</strong></li>
                         </ul>
-                        <div class="pt-btn"><a class="btn btn-secondary btn-sm" href="apps_full_chat.html">owner</a></div>
+                        <div class="pt-btn"><a class="btn btn-success btn-sm" href="apps_full_chat.html">Administrator</a></div>
                     </div>
                 </div>
-                @endforeach
-
+                <div class="profile-tile"><a class="profile-tile-box" href="users_profile_small.html">
+                        <div class="pt-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
+                        <div class="pt-user-name">Ben Gossman</div>
+                    </a>
+                    <div class="profile-tile-meta">
+                        <ul>
+                            <li>Property:<strong>Limuru Flats</strong></li>
+                            <li>No. of Houses:<strong><a href="apps_support_index.html">9</a></strong></li>
+                            <li>Location:<strong>Limuru</strong></li>
+                        </ul>
+                        <div class="pt-btn"><a class="btn btn-secondary btn-sm" href="apps_full_chat.html">Owner</a></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-        </div>
-    </div>
-    <div class="display-type"></div>
+</div>
+</div>
+<div class="display-type"></div>
 </div>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
@@ -229,3 +209,4 @@
 </body>
 <!-- Mirrored from light.pinsupreme.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Apr 2020 15:55:47 GMT -->
 </html>
+

@@ -8,9 +8,9 @@
 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 <div class="content-i">
     <div class="content-box">
-        <div class="element-wrapper"><h6 class="element-header">TENANTS</h6>
+        <div class="element-wrapper"><h6 class="element-header">Cash Payments</h6>
 
-            <div class="element-box"><h5 class="form-header"><a class="btn btn-sm btn-secondary" type="button" data-toggle="modal" data-target="#CreateTenantModal" href="#">Register Tenant</a>
+            <div class="element-box"><h5 class="form-header"><a class="btn btn-sm btn-secondary" type="button" data-toggle="modal" data-target="#CreateTenantModal" href="#">Process Cash Payment</a>
                 </h5>
 
                 <div class="table-responsive">
@@ -19,11 +19,9 @@
                         <tr>
                             <th>Tenant Name</th>
                             <th>Property</th>
-                            <th>Id No.</th>
-                            <th>Phone No.</th>
                             <th>House No.</th>
-                            <th>House Type</th>
-                            <th>Total Payable Amount</th>
+                            <th>HouseType</th>
+                            <th>Paid Amount</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -31,31 +29,27 @@
                         <tr>
                             <th>Tenant Name</th>
                             <th>Property</th>
-                            <th>Id No.</th>
-                            <th>Phone No.</th>
                             <th>House No.</th>
                             <th>House Type</th>
-                            <th>Amount</th>
+                            <th>Paid Amount</th>
                             <th>Action</th>
                         </tr>
                         </tfoot>
                         <tbody>
-                        @foreach($tenants as $tenant)
+                        @foreach($cashes as $cache)
 
                             <tr>
-                            <td>{{$tenant->name}}</td>
-                            <td>{{$tenant->house->property->name}}</td>
-                            <td>{{$tenant->idno}}</td>
-                            <td>{{$tenant->phone}}</td>
-                            <td>{{$tenant->house->name}}</td>
-                            <td>{{$tenant->houseType}}</td>
-                            <td>Ksh: {{$tenant->amount}}/=</td>
-                                <form action="{{url('deleteUser',$tenant->id)}}" method="post">
+                                <td>{{$cache->tenant->name}}</td>
+                                <td>{{$cache->property}}</td>
+                                <td>{{$cache->house}}</td>
+                                <td>{{$cache->houseType}}</td>
+                                <td>Ksh: {{$cache->amount}}/=</td>
+                                <form action="{{url('deleteBill',$cache->id)}}" method="post">
                                     @csrf
-                                    <td><button class="btn btn-secondary">Delete</button></td>
+                                    <td><button type="submit" class="btn btn-secondary">Delete</button></td>
 
                                 </form>
-                        </tr>
+                            </tr>
                         @endforeach
                         </tbody>
                     </table>
@@ -74,62 +68,27 @@
                 <span class="close-label">Close</span><span
                     class="os-icon os-icon-close"></span></button>
             <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                    Tenant Details</h4>
-                <form action="{{route('tenantDetails.store')}}" method="post">
+                    Cash Payment</h4>
+                <form action="{{route('payments.store')}}" method="post">
                     @csrf
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="form-group"><label for="">Full Name</label>
-                            <input class="form-control" name="name" placeholder="Enter Full name..." value="">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group"><label for="">Id No.</label>
-                            <input class="form-control" name="idno" placeholder="Enter Id No..." value="">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group"><label for="">Phone No</label>
-                            <div class="form-group">
-                                <input class="form-control" name="phone" placeholder="Enter Phone No..." value="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group"><label for="">Property</label>
-                            <div class="form-group">
-                                <select class="form-control" id="getProperty" name="property">
-                                    <option>Select Property</option>
-                                    @foreach($properties as $property)
-                                    <option value="{{$property->id}}">{{$property->name}}</option>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group"><label for="">Full Name</label>
+                                <select class="form-control" id="getTenant" name="tenant_id">
+                                    <option>Select Tenant</option>
+                                    @foreach($tenants as $tenant)
+                                        <option value="{{$tenant->id}}">{{$tenant->name}}</option>
                                     @endforeach
-                                </select>
-                            </div>
+                                </select></div>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group"><label for="">House No</label>
-                            <div class="form-group">
-                                <select class="form-control" id="getHouse" name="houseNo">
+                    <div class="row" id="getDet">
 
-                                </select>
-                            </div>
-                        </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="form-group"><label for="">House Price</label>
-                            <div class="form-group">
-                                <input class="form-control" id="getHouseDetail" name="amount" placeholder="House Price..." value="">
-                            </div>
-                        </div>
-                    </div>
+                        <button type="submit" class="btn btn-outline-secondary btn-block">Submit</button>
 
-                    <button type="submit" class="btn btn-outline-secondary btn-block">Submit</button>
-
-                </div>
                 </form>
+            </div>
         </div>
-    </div>
     </div>
 </div>
 
@@ -171,14 +130,14 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script type="text/javascript">
-    $('#getProperty').on('change',function () {
+    $('#getTenant').on('change',function () {
         $value = $(this).val();
         $.ajax({
             type:"get",
-            url:"{{url('ajax')}}",
-            data:{'property':$value},
+            url:"{{url('ajax2')}}",
+            data:{'tenant':$value},
             success:function (data) {
-                $('#getHouse').html(data);
+                $('#getDet').html(data);
             },
             error:function (error) {
                 console.log(error)
@@ -188,25 +147,7 @@
 
         })
 
-    })
-    $('#getHouse').on('change',function () {
-        $value = $(this).val();
-        $.ajax({
-            type:"get",
-            url:"{{url('ajax1')}}",
-            data:{'houseNo':$value},
-            success:function (data) {
-                $('#getHouseDetail').val(data);
-            },
-            error:function (error) {
-                console.log(error)
-                alert('error')
-
-            }
-
-        })
-
-    })
+    });
 </script>
 </body>
 <!-- Mirrored from light.pinsupreme.com/tables_datatables.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Apr 2020 15:58:12 GMT -->

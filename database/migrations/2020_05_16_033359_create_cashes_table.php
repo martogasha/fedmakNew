@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBillsTable extends Migration
+class CreateCashesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateBillsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bills', function (Blueprint $table) {
+        Schema::create('cashes', function (Blueprint $table) {
             $table->id();
             $table->integer('tenant_id');
             $table->string('property');
             $table->string('house');
             $table->string('houseType');
             $table->integer('amount');
-
-
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ class CreateBillsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bills');
+        Schema::dropIfExists('cashes');
     }
 }

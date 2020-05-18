@@ -1,8 +1,8 @@
 @include('Partials.header')
 @include('flash-message')
 <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item"><a href="index.html">Products</a></li>
+    <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{url('property')}}">property</a></li>
     <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
 </ul>
 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
@@ -120,7 +120,7 @@
                             <td>{{$property->name}}</td>
                             <td>{{$property->lName}}</td>
                             <td>{{$property->location}}</td>
-                            <td class="text-right">50</td>
+                            <td class="text-right">{{\App\PropertyUnit::where('property_id',$property->id)->count()}}</td>
                             <td class="text-right"><button class="btn btn-secondary">25</button></td>
 
                             <td class="row-actions"><a href="{{url('property',$property->id)}}"><i class="os-icon os-icon-ui-49"></i>View</a>

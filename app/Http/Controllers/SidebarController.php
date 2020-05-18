@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Property;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class SidebarController extends Controller
 {
     public function index(){
         $properties = Property::all();
-        return view('admin.index',[
+        return view('Partials.rightSidebar',[
             'properties'=>$properties
         ]);
     }
