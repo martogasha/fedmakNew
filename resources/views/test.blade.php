@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- Mirrored from light.pinsupreme.com/uikit_modals.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Apr 2020 15:57:57 GMT -->
+<!-- Mirrored from light.pinsupreme.com/apps_full_chat.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Apr 2020 15:57:19 GMT -->
 <head><title>Admin Dashboard HTML Template</title>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
@@ -20,8 +20,8 @@
     <link href="bower_components/slick-carousel/slick/slick.css" rel="stylesheet">
     <link href="css/main5739.css?version=4.5.0" rel="stylesheet">
 </head>
-<body class="menu-position-side menu-side-left full-screen">
-<div class="all-wrapper solid-bg-all">
+<body class="menu-position-side menu-side-left">
+<div class="all-wrapper no-padding-content solid-bg-all">
     <div class="search-with-suggestions-w">
         <div class="search-with-suggestions-modal">
             <div class="element-search"><input class="search-suggest-input" placeholder="Start typing to search...">
@@ -301,7 +301,7 @@
             </div>
         </div>
         <div
-            class="menu-w color-scheme-light color-style-transparent menu-position-side menu-side-left menu-layout-compact sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link">
+            class="menu-w color-scheme-dark color-style-bright menu-position-side menu-side-left menu-layout-mini sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link">
             <div class="logo-w"><a class="logo" href="index.html">
                     <div class="logo-element"></div>
                     <div class="logo-label">Clean Admin</div>
@@ -337,83 +337,6 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="menu-actions">
-                <div class="messages-notifications os-dropdown-trigger os-dropdown-position-right"><i
-                        class="os-icon os-icon-mail-14"></i>
-                    <div class="new-messages-count">12</div>
-                    <div class="os-dropdown light message-list">
-                        <ul>
-                            <li><a href="#">
-                                    <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
-                                    <div class="message-content"><h6 class="message-from">John Mayers</h6><h6
-                                            class="message-title">Account Update</h6></div>
-                                </a></li>
-                            <li><a href="#">
-                                    <div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
-                                    <div class="message-content"><h6 class="message-from">Phil Jones</h6><h6
-                                            class="message-title">Secutiry Updates</h6></div>
-                                </a></li>
-                            <li><a href="#">
-                                    <div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
-                                    <div class="message-content"><h6 class="message-from">Bekky Simpson</h6><h6
-                                            class="message-title">Vacation Rentals</h6></div>
-                                </a></li>
-                            <li><a href="#">
-                                    <div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
-                                    <div class="message-content"><h6 class="message-from">Alice Priskon</h6><h6
-                                            class="message-title">Payment Confirmation</h6></div>
-                                </a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-right"><i
-                        class="os-icon os-icon-ui-46"></i>
-                    <div class="os-dropdown">
-                        <div class="icon-w"><i class="os-icon os-icon-ui-46"></i></div>
-                        <ul>
-                            <li><a href="users_profile_small.html"><i class="os-icon os-icon-ui-49"></i><span>Profile Settings</span></a>
-                            </li>
-                            <li><a href="users_profile_small.html"><i class="os-icon os-icon-grid-10"></i><span>Billing Info</span></a>
-                            </li>
-                            <li><a href="users_profile_small.html"><i class="os-icon os-icon-ui-44"></i><span>My Invoices</span></a>
-                            </li>
-                            <li><a href="users_profile_small.html"><i class="os-icon os-icon-ui-15"></i><span>Cancel Account</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="messages-notifications os-dropdown-trigger os-dropdown-position-right"><i
-                        class="os-icon os-icon-zap"></i>
-                    <div class="new-messages-count">4</div>
-                    <div class="os-dropdown light message-list">
-                        <div class="icon-w"><i class="os-icon os-icon-zap"></i></div>
-                        <ul>
-                            <li><a href="#">
-                                    <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
-                                    <div class="message-content"><h6 class="message-from">John Mayers</h6><h6
-                                            class="message-title">Account Update</h6></div>
-                                </a></li>
-                            <li><a href="#">
-                                    <div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
-                                    <div class="message-content"><h6 class="message-from">Phil Jones</h6><h6
-                                            class="message-title">Secutiry Updates</h6></div>
-                                </a></li>
-                            <li><a href="#">
-                                    <div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
-                                    <div class="message-content"><h6 class="message-from">Bekky Simpson</h6><h6
-                                            class="message-title">Vacation Rentals</h6></div>
-                                </a></li>
-                            <li><a href="#">
-                                    <div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
-                                    <div class="message-content"><h6 class="message-from">Alice Priskon</h6><h6
-                                            class="message-title">Payment Confirmation</h6></div>
-                                </a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="element-search autosuggest-search-activator"><input placeholder="Start typing to search...">
             </div>
             <h1 class="menu-page-header">Page Header</h1>
             <ul class="main-menu">
@@ -678,7 +601,7 @@
             </div>
         </div>
         <div class="content-w">
-            <div class="top-bar color-scheme-transparent">
+            <div class="top-bar color-scheme-transparent d-none">
                 <div class="top-menu-controls">
                     <div class="element-search autosuggest-search-activator"><input
                             placeholder="Start typing to search..."></div>
@@ -755,538 +678,162 @@
                     </div>
                 </div>
             </div>
-            <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="index.html">Products</a></li>
-                <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
-            </ul>
             <div class="content-i">
                 <div class="content-box">
-                    <div class="element-wrapper"><h6 class="element-header">Examples of Modals</h6>
-                        <div class="element-box"><h5 class="form-header">New Onboarding Modals <span
-                                    class="badge badge-danger">New</span></h5>
-                            <div class="form-desc">Built specifically for this template, these onboarding modals are a
-                                great way to introduce your customers to your web app or collect additional information
-                                from them. We have two layouts available: wide, with media and text side by side and
-                                narrow one with media above text. Each can also have multiple slides inside them.
-                            </div>
-                            <h6 class="form-header">Media Above Text</h6>
-                            <div class="mb-4">
-                                <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingSlideModal"
-                                        data-toggle="modal" type="button">Multistep modal with slider
-                                </button>
-                                <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                     id="onboardingSlideModal" role="dialog" tabindex="-1">
-                                    <div class="modal-dialog modal-centered" role="document">
-                                        <div class="modal-content text-center">
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span class="close-label">Skip Intro</span><span
-                                                    class="os-icon os-icon-close"></span></button>
-                                            <div class="onboarding-slider-w">
-                                                <div class="onboarding-slide">
-                                                    <div class="onboarding-media"><img alt="" src="img/bigicon5.png"
-                                                                                       width="200px"></div>
-                                                    <div class="onboarding-content with-gradient"><h4
-                                                            class="onboarding-title">Example Request Information</h4>
-                                                        <div class="onboarding-text">In this example you can see a form
-                                                            where you can request some additional information from the
-                                                            customer when they land on the app page.
-                                                        </div>
-                                                        <form>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group"><label for="">Your Full
-                                                                            Name</label><input class="form-control"
-                                                                                               placeholder="Enter your full name..."
-                                                                                               value=""></div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group"><label for="">Your
-                                                                            Role</label><select class="form-control">
-                                                                            <option>Web Developer</option>
-                                                                            <option>Business Owner</option>
-                                                                            <option>Other</option>
-                                                                        </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                                <div class="onboarding-slide">
-                                                    <div class="onboarding-media"><img alt="" src="img/bigicon6.png"
-                                                                                       width="200px"></div>
-                                                    <div class="onboarding-content with-gradient"><h4
-                                                            class="onboarding-title">Showcase App Features</h4>
-                                                        <div class="onboarding-text">In this example you can showcase
-                                                            some of the features of your application, it is very handy
-                                                            to make new users aware of your hidden features. You can use
-                                                            boostrap columns to split them up.
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-6">
-                                                                <ul class="features-list">
-                                                                    <li>Fully Responsive design</li>
-                                                                    <li>Pre-built app layouts</li>
-                                                                    <li>Incredible Flexibility</li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <ul class="features-list">
-                                                                    <li>Boxed & Full Layouts</li>
-                                                                    <li>Based on Bootstrap 4</li>
-                                                                    <li>Developer Friendly</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="onboarding-slide">
-                                                    <div class="onboarding-media"><img alt="" src="img/bigicon2.png"
-                                                                                       width="200px"></div>
-                                                    <div class="onboarding-content with-gradient"><h4
-                                                            class="onboarding-title">Example of onboarding screen!</h4>
-                                                        <div class="onboarding-text">This is an example of a multistep
-                                                            onboarding screen, you can use it to introduce your
-                                                            customers to your app, or collect additional information
-                                                            from them before they start using your app.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                    <div class="full-chat-w">
+                        <div class="full-chat-i">
+                            <div class="full-chat-left">
+                                <div class="os-tabs-w">
+                                    <ul class="nav nav-tabs upper centered">
+                                        <li class="nav-item"><a class="nav-link active" data-toggle="tab"
+                                                                href="#tab_overview"><i
+                                                    class="os-icon os-icon-mail-14"></i><span>Chats</span></a></li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab_sales"><i
+                                                    class="os-icon os-icon-ui-93"></i><span>Contacts</span></a></li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab_sales"><i
+                                                    class="os-icon os-icon-ui-02"></i><span>Favorites</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="chat-search">
+                                    <div class="element-search"><input placeholder="Search users by name..."></div>
+                                </div>
+                                <div class="user-list">
+                                    <div class="user-w">
+                                        <div class="avatar with-status status-green"><img alt="" src="img/avatar1.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <div class="user-date">12 min</div>
+                                            <div class="user-name">John Mayers</div>
+                                            <div class="last-message">What is going on, are we...</div>
                                         </div>
                                     </div>
-                                </div>
-                                <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingFormModal"
-                                        data-toggle="modal" type="button">Modal with form
-                                </button>
-                                <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                     id="onboardingFormModal" role="dialog" tabindex="-1">
-                                    <div class="modal-dialog modal-centered" role="document">
-                                        <div class="modal-content text-center">
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span class="close-label">Skip Intro</span><span
-                                                    class="os-icon os-icon-close"></span></button>
-                                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png"
-                                                                               width="200px"></div>
-                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                                                    Example Request Information</h4>
-                                                <div class="onboarding-text">In this example you can see a form where
-                                                    you can request some additional information from the customer when
-                                                    they land on the app page.
-                                                </div>
-                                                <form>
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group"><label for="">Your Full Name</label><input
-                                                                    class="form-control"
-                                                                    placeholder="Enter your full name..." value="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group"><label for="">Your
-                                                                    Role</label>
-                                                                <select class="form-control">
-                                                                    <option>Web Developer</option>
-                                                                    <option>Business Owner</option>
-                                                                    <option>Other</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
+                                    <div class="user-w">
+                                        <div class="avatar with-status status-green"><img alt="" src="img/avatar2.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <div class="user-date">2 hours</div>
+                                            <div class="user-name">Bill Railey</div>
+                                            <div class="last-message">Yes, I&#39;ve sent you details...</div>
                                         </div>
                                     </div>
-                                </div>
-                                <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingFeaturesModal"
-                                        data-toggle="modal" type="button">Modal with feature list
-                                </button>
-                                <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                     id="onboardingFeaturesModal" role="dialog" tabindex="-1">
-                                    <div class="modal-dialog modal-centered" role="document">
-                                        <div class="modal-content text-center">
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span class="close-label">Skip Intro</span><span
-                                                    class="os-icon os-icon-close"></span></button>
-                                            <div class="onboarding-media"><img alt="" src="img/bigicon6.png"
-                                                                               width="200px"></div>
-                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                                                    Showcase App Features</h4>
-                                                <div class="onboarding-text">In this example you can showcase some of
-                                                    the features of your application, it is very handy to make new users
-                                                    aware of your hidden features. You can use boostrap columns to split
-                                                    them up.
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <ul class="features-list">
-                                                            <li>Fully Responsive design</li>
-                                                            <li>Pre-built app layouts</li>
-                                                            <li>Incredible Flexibility</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <ul class="features-list">
-                                                            <li>Boxed & Full Layouts</li>
-                                                            <li>Based on Bootstrap 4</li>
-                                                            <li>Developer Friendly</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div class="user-w">
+                                        <div class="avatar with-status status-green"><img alt="" src="img/avatar3.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <div class="user-date">24 min</div>
+                                            <div class="user-name">Simon Backs</div>
+                                            <div class="last-message">What is going on, are we...</div>
                                         </div>
                                     </div>
-                                </div>
-                                <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingTextModal"
-                                        data-toggle="modal" type="button">Modal with text only
-                                </button>
-                                <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                     id="onboardingTextModal" role="dialog" tabindex="-1">
-                                    <div class="modal-dialog modal-centered" role="document">
-                                        <div class="modal-content text-center">
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span class="close-label">Skip Intro</span><span
-                                                    class="os-icon os-icon-close"></span></button>
-                                            <div class="onboarding-media"><img alt="" src="img/bigicon2.png"
-                                                                               width="200px"></div>
-                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                                                    Example of onboarding screen!</h4>
-                                                <div class="onboarding-text">This is an example of a multistep
-                                                    onboarding screen, you can use it to introduce your customers to
-                                                    your app, or collect additional information from them before they
-                                                    start using your app.
-                                                </div>
-                                            </div>
+                                    <div class="user-w">
+                                        <div class="avatar with-status status-green"><img alt="" src="img/avatar1.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <div class="user-date">7 min</div>
+                                            <div class="user-name">Kelley Brooks</div>
+                                            <div class="last-message">Can you send me this...</div>
+                                        </div>
+                                    </div>
+                                    <div class="user-w">
+                                        <div class="avatar with-status status-green"><img alt="" src="img/avatar7.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <div class="user-date">4 hours</div>
+                                            <div class="user-name">Vinie Jones</div>
+                                            <div class="last-message">What is going on, are we...</div>
+                                        </div>
+                                    </div>
+                                    <div class="user-w">
+                                        <div class="avatar with-status status-green"><img alt="" src="img/avatar1.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <div class="user-date">2 days</div>
+                                            <div class="user-name">Brad Pitt</div>
+                                            <div class="last-message">They have submitted users...</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <h6 class="form-header">Media on Left, Content on Right</h6>
-                            <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingWideSlideModal"
-                                    data-toggle="modal" type="button">Multistep modal with slider
-                            </button>
-                            <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                 id="onboardingWideSlideModal" role="dialog" tabindex="-1">
-                                <div class="modal-dialog modal-lg modal-centered" role="document">
-                                    <div class="modal-content text-center">
-                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                            <span class="close-label">Skip Intro</span><span
-                                                class="os-icon os-icon-close"></span></button>
-                                        <div class="onboarding-slider-w">
-                                            <div class="onboarding-slide">
-                                                <div class="onboarding-side-by-side">
-                                                    <div class="onboarding-media"><img alt="" src="img/bigicon5.png"
-                                                                                       width="200px"></div>
-                                                    <div class="onboarding-content with-gradient"><h4
-                                                            class="onboarding-title">Example Request Information</h4>
-                                                        <div class="onboarding-text">In this example you can see a form
-                                                            where you can request some additional information from the
-                                                            customer when they land on the app page.
-                                                        </div>
-                                                        <form>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group"><label for="">Your Full
-                                                                            Name</label><input class="form-control"
-                                                                                               placeholder="Enter your full name..."
-                                                                                               value=""></div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group"><label for="">Your
-                                                                            Role</label><select class="form-control">
-                                                                            <option>Web Developer</option>
-                                                                            <option>Business Owner</option>
-                                                                            <option>Other</option>
-                                                                        </select></div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
+                            <div class="full-chat-middle">
+                                <div class="chat-head">
+                                    <div class="user-info"><span>To:</span><a href="#">John Mayers</a></div>
+                                    <div class="user-actions"><a href="#"><i class="os-icon os-icon-mail-07"></i></a><a
+                                            href="#"><i class="os-icon os-icon-phone-18"></i></a><a href="#"><i
+                                                class="os-icon os-icon-phone-15"></i></a></div>
+                                </div>
+                                <div class="chat-content-w">
+                                    <div class="chat-content">
+                                        <div class="chat-message">
+                                            <div class="chat-message-content-w">
+                                                <div class="chat-message-content">Hi, my name is Mike, I will be happy
+                                                    to assist you
                                                 </div>
                                             </div>
-                                            <div class="onboarding-slide">
-                                                <div class="onboarding-side-by-side">
-                                                    <div class="onboarding-media"><img alt="" src="img/bigicon6.png"
-                                                                                       width="200px"></div>
-                                                    <div class="onboarding-content with-gradient"><h4
-                                                            class="onboarding-title">Showcase App Features</h4>
-                                                        <div class="onboarding-text">In this example you can showcase
-                                                            some of the features of your application, it is very handy
-                                                            to make new users aware of your hidden features. You can use
-                                                            boostrap columns to split them up.
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-6">
-                                                                <ul class="features-list">
-                                                                    <li>Fully Responsive design</li>
-                                                                    <li>Pre-built app layouts</li>
-                                                                    <li>Incredible Flexibility</li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <ul class="features-list">
-                                                                    <li>Boxed & Full Layouts</li>
-                                                                    <li>Based on Bootstrap 4</li>
-                                                                    <li>Developer Friendly</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                            <div class="chat-message-avatar"><img alt="" src="img/avatar3.jpg"></div>
+                                            <div class="chat-message-date">9:12am</div>
+                                        </div>
+                                        <div class="chat-date-separator"><span>Yesterday</span></div>
+                                        <div class="chat-message self">
+                                            <div class="chat-message-content-w">
+                                                <div class="chat-message-content">That walls over which the drawers.
+                                                    Gone studies to titles have audiences of and concepts was motivator
                                                 </div>
                                             </div>
-                                            <div class="onboarding-slide">
-                                                <div class="onboarding-side-by-side">
-                                                    <div class="onboarding-media"><img alt="" src="img/bigicon2.png"
-                                                                                       width="200px"></div>
-                                                    <div class="onboarding-content with-gradient"><h4
-                                                            class="onboarding-title">Example of onboarding screen!</h4>
-                                                        <div class="onboarding-text">This is an example of a multistep
-                                                            onboarding screen, you can use it to introduce your
-                                                            customers to your app, or collect additional information
-                                                            from them before they start using your app.
-                                                        </div>
-                                                    </div>
+                                            <div class="chat-message-date">1:23pm</div>
+                                            <div class="chat-message-avatar"><img alt="" src="img/avatar1.jpg"></div>
+                                        </div>
+                                        <div class="chat-message">
+                                            <div class="chat-message-content-w">
+                                                <div class="chat-message-content">Slept train nearby a its is design
+                                                    size agreeable. And check cons, but countries the was to such any
+                                                    founding company
                                                 </div>
                                             </div>
+                                            <div class="chat-message-avatar"><img alt="" src="img/avatar3.jpg"></div>
+                                            <div class="chat-message-date">3:45am</div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingWideFormModal"
-                                    data-toggle="modal" type="button">Modal with form
-                            </button>
-                            <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                 id="onboardingWideFormModal" role="dialog" tabindex="-1">
-                                <div class="modal-dialog modal-lg modal-centered" role="document">
-                                    <div class="modal-content text-center">
-                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                            <span class="close-label">Skip Intro</span><span
-                                                class="os-icon os-icon-close"></span></button>
-                                        <div class="onboarding-side-by-side">
-                                            <div class="onboarding-media"><img alt="" src="img/bigicon5.png"
-                                                                               width="200px"></div>
-                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                                                    Example Request Information</h4>
-                                                <div class="onboarding-text">In this example you can see a form where
-                                                    you can request some additional information from the customer when
-                                                    they land on the app page.
-                                                </div>
-                                                <form>
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group"><label for="">Your Full Name</label><input
-                                                                    class="form-control"
-                                                                    placeholder="Enter your full name..." value="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group"><label for="">Your
-                                                                    Role</label><select class="form-control">
-                                                                    <option>Web Developer</option>
-                                                                    <option>Business Owner</option>
-                                                                    <option>Other</option>
-                                                                </select></div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
+                                <div class="chat-controls">
+                                    <div class="chat-input"><input placeholder="Type your message here..."></div>
+                                    <div class="chat-input-extra">
+                                        <div class="chat-extra-actions"><a href="#"><i
+                                                    class="os-icon os-icon-mail-07"></i></a><a href="#"><i
+                                                    class="os-icon os-icon-phone-18"></i></a><a href="#"><i
+                                                    class="os-icon os-icon-phone-15"></i></a></div>
+                                        <div class="chat-btn"><a class="btn btn-primary btn-sm" href="#">Reply</a></div>
                                     </div>
                                 </div>
                             </div>
-                            <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingWideFeaturesModal"
-                                    data-toggle="modal" type="button">Modal with feature list
-                            </button>
-                            <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                 id="onboardingWideFeaturesModal" role="dialog" tabindex="-1">
-                                <div class="modal-dialog modal-lg modal-centered" role="document">
-                                    <div class="modal-content text-center">
-                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                            <span class="close-label">Skip Intro</span><span
-                                                class="os-icon os-icon-close"></span></button>
-                                        <div class="onboarding-side-by-side">
-                                            <div class="onboarding-media"><img alt="" src="img/bigicon6.png"
-                                                                               width="200px"></div>
-                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                                                    Showcase App Features</h4>
-                                                <div class="onboarding-text">In this example you can showcase some of
-                                                    the features of your application, it is very handy to make new users
-                                                    aware of your hidden features. You can use boostrap columns to split
-                                                    them up.
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <ul class="features-list">
-                                                            <li>Fully Responsive design</li>
-                                                            <li>Pre-built app layouts</li>
-                                                            <li>Incredible Flexibility</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <ul class="features-list">
-                                                            <li>Boxed & Full Layouts</li>
-                                                            <li>Based on Bootstrap 4</li>
-                                                            <li>Developer Friendly</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                            <div class="full-chat-right">
+                                <div class="user-intro">
+                                    <div class="avatar"><img alt="" src="img/avatar1.jpg"></div>
+                                    <div class="user-intro-info"><h5 class="user-name">John Mayers</h5>
+                                        <div class="user-sub">San Francisco, CA</div>
+                                        <div class="user-social"><a href="#"><i class="os-icon os-icon-twitter"></i></a><a
+                                                href="#"><i class="os-icon os-icon-facebook"></i></a></div>
+                                    </div>
+                                </div>
+                                <div class="chat-info-section">
+                                    <div class="ci-header"><i class="os-icon os-icon-documents-03"></i><span>Shared Files</span>
+                                    </div>
+                                    <div class="ci-content">
+                                        <div class="ci-file-list">
+                                            <ul>
+                                                <li><a href="#">Annual Revenue.pdf</a></li>
+                                                <li><a href="#">Expenses.xls</a></li>
+                                                <li><a href="#">Business Plan.doc</a></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <button class="mr-2 mb-2 btn btn-primary" data-target="#onboardingWideTextModal"
-                                    data-toggle="modal" type="button">Modal with text only
-                            </button>
-                            <div aria-hidden="true" class="onboarding-modal modal fade animated"
-                                 id="onboardingWideTextModal" role="dialog" tabindex="-1">
-                                <div class="modal-dialog modal-lg modal-centered" role="document">
-                                    <div class="modal-content text-center">
-                                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                            <span class="close-label">Skip Intro</span><span
-                                                class="os-icon os-icon-close"></span></button>
-                                        <div class="onboarding-side-by-side">
-                                            <div class="onboarding-media"><img alt="" src="img/bigicon2.png"
-                                                                               width="200px"></div>
-                                            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                                                    Example of onboarding screen!</h4>
-                                                <div class="onboarding-text">This is an example of a multistep
-                                                    onboarding screen, you can use it to introduce your customers to
-                                                    your app, or collect additional information from them before they
-                                                    start using your app.
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="chat-info-section">
+                                    <div class="ci-header"><i class="os-icon os-icon-documents-07"></i><span>Shared Photos</span>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="element-box"><h5 class="form-header">Regular Modals</h5>
-                            <div class="form-desc">Modals are streamlined, but flexible dialog prompts powered by
-                                JavaScript. They support a number of use cases from user notification to completely
-                                custom content and feature a handful of helpful subcomponents, sizes, and more. You can
-                                read full bootstrap documentation about Modals by <a
-                                    href="https://v4-alpha.getbootstrap.com/components/modal/" target="_blank">clicking
-                                    here</a></div>
-                            <h6 class="form-header">Regular Modal</h6>
-                            <button class="btn btn-primary" data-target="#exampleModal1" data-toggle="modal"
-                                    type="button">Launch demo modal
-                            </button>
-                            <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade"
-                                 id="exampleModal1" role="dialog" tabindex="-1">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Modal
-                                                title</h5>
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span aria-hidden="true"> &times;</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group"><label for=""> Email address</label><input
-                                                        class="form-control" placeholder="Enter email" type="email">
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <div class="form-group"><label for=""> Password</label><input
-                                                                class="form-control" placeholder="Password"
-                                                                type="password"></div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <div class="form-group"><label for="">Confirm
-                                                                Password</label><input class="form-control"
-                                                                                       placeholder="Password"
-                                                                                       type="password"></div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-secondary" data-dismiss="modal" type="button">
-                                                Close
-                                            </button>
-                                            <button class="btn btn-primary" type="button"> Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="element-box"><h5 class="form-header">Optional Sizes</h5>
-                            <div class="form-desc"><p>Modals have two optional sizes, available via modifier classes to
-                                    be placed on a <code class="highlighter-rouge">.modal-dialog</code>. These sizes
-                                    kick in at certain breakpoints to avoid horizontal scrollbars on narrower viewports.
-                                </p></div>
-                            <button class="mr-2 mb-2 btn btn-primary" data-target=".bd-example-modal-lg"
-                                    data-toggle="modal"> Large modal
-                            </button>
-                            <div aria-hidden="true" aria-labelledby="myLargeModalLabel"
-                                 class="modal fade bd-example-modal-lg" role="dialog" tabindex="-1">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Modal
-                                                title</h5>
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span aria-hidden="true"> &times;</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group"><label for=""> Email address</label><input
-                                                        class="form-control" placeholder="Enter email" type="email">
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <div class="form-group"><label for=""> Password</label><input
-                                                                class="form-control" placeholder="Password"
-                                                                type="password"></div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <div class="form-group"><label for="">Confirm
-                                                                Password</label><input class="form-control"
-                                                                                       placeholder="Password"
-                                                                                       type="password"></div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-secondary" data-dismiss="modal" type="button">
-                                                Close
-                                            </button>
-                                            <button class="btn btn-primary" type="button"> Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary" data-target=".bd-example-modal-sm" data-toggle="modal"
-                                    type="button"> Small modal
-                            </button>
-                            <div aria-hidden="true" aria-labelledby="mySmallModalLabel"
-                                 class="modal fade bd-example-modal-sm" role="dialog" tabindex="-1">
-                                <div class="modal-dialog modal-sm">
-                                    <div class="modal-content">
-                                        <div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Modal
-                                                title</h5>
-                                            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                                                <span aria-hidden="true"> &times;</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group"><label for=""> Email address</label><input
-                                                        class="form-control" placeholder="Enter email" type="email">
-                                                </div>
-                                                <div class="form-group"><label for=""> Password</label><input
-                                                        class="form-control" placeholder="Password" type="password">
-                                                </div>
-                                                <div class="form-group"><label for="">Confirm Password</label><input
-                                                        class="form-control" placeholder="Password" type="password">
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-secondary" data-dismiss="modal" type="button">
-                                                Close
-                                            </button>
-                                            <button class="btn btn-primary" type="button"> Save changes</button>
+                                    <div class="ci-content">
+                                        <div class="ci-photos-list"><img alt="" src="img/portfolio9.jpg"><img alt=""
+                                                                                                              src="img/portfolio2.jpg"><img
+                                                alt="" src="img/portfolio12.jpg"><img alt="" src="img/portfolio14.jpg">
                                         </div>
                                     </div>
                                 </div>
@@ -1294,7 +841,8 @@
                         </div>
                     </div>
                     <div class="floated-colors-btn second-floated-btn">
-                        <div class="os-toggler-w">
+                        <div
+                            class="os-toggler-w">
                             <div class="os-toggler-i">
                                 <div class="os-toggler-pill"></div>
                             </div>
@@ -1477,5 +1025,5 @@
     ga('create', 'UA-42863888-9', 'auto');
     ga('send', 'pageview');</script>
 </body>
-<!-- Mirrored from light.pinsupreme.com/uikit_modals.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Apr 2020 15:57:57 GMT -->
+<!-- Mirrored from light.pinsupreme.com/apps_full_chat.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Apr 2020 15:57:19 GMT -->
 </html>

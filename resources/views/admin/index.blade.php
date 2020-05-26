@@ -52,7 +52,7 @@
                                                 </i>
                                             </a>
                                         </div>
-                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="#">
+                                        <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('message')}}">
                                                 <div class="label">Messages</div>
                                                 <i class="fa fa-envelope fa-3x" aria-hidden="true">
                                                     <div class="trending trending-up-basic"><span>New Message</span></div>

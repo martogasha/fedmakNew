@@ -122,7 +122,7 @@
                             placeholder="Start typing to search..."></div>
                     <div class="messages-notifications os-dropdown-trigger os-dropdown-position-left"><i
                             class="os-icon os-icon-mail-14"></i>
-                        <div class="new-messages-count">12</div>
+                        <div class="new-messages-count">{{\App\Message::where('status',0)->count()}}</div>
                         <div class="os-dropdown light message-list">
                             <ul>
                                 <li><a href="#">

@@ -39,4 +39,7 @@ class User extends Authenticatable
     public function house(){
         return $this->belongsTo(PropertyUnit::class);
     }
+    public function property(){
+        return $this->belongsTo(Property::class);
+    }
 }

@@ -23,6 +23,8 @@ Route::post('deleteUser/{id}','TenantRecordsController@deleteUser');
 Route::get('ajax','TenantController@getHouses');
 Route::get('ajax1','TenantController@getHouseDetails');
 Route::get('ajax2','BillController@getTenant');
+Route::get('ajax3','MessageController@getMessage');
+
 
 Route::resource('propertyUnits','PropertyHousesController');
 Route::get('getHouses','PropertyHousesController@getHouses');
@@ -46,6 +48,7 @@ Route::resource('payments','PaymentController');
 Route::get('cashPayments','PaymentController@cashPayments');
 Route::resource('monthlyReview','MonthlyReviewController');
 Route::resource('sidebar','SidebarController');
+Route::resource('message','MessageController');
 
 
 
