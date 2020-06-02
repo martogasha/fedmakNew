@@ -49,6 +49,11 @@ Route::get('cashPayments','PaymentController@cashPayments');
 Route::resource('monthlyReview','MonthlyReviewController');
 Route::resource('sidebar','SidebarController');
 Route::resource('message','MessageController');
+Route::get('registerUrls','MpesaPaymentController@registerUrls');
+Route::post('getPayment','MpesaPaymentController@getMpesaPayment');
+Route::post('getValidation', 'MpesaPaymentController@getMpesaValidation');
+Route::get('simulate', 'MpesaPaymentController@simulate');
+
 
 
 

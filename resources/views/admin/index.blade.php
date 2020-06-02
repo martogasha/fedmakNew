@@ -112,7 +112,7 @@
                                     <td class="row-actions"><a href="{{url('tables')}}"><i class="os-icon os-icon-ui-49"></i>View</a>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr15>
                                     <td>Limuru Flats</td>
                                     <td>1500</td>
                                     <td class="text-right">1000</td>
@@ -123,7 +123,7 @@
                                     </td>
                                     <td class="row-actions"><a href="{{url('tables')}}"><i class="os-icon os-icon-ui-49"></i>View</a>
                                     </td>
-                                </tr>
+                                </tr15>
 
                                 </tbody>
                             </table>
@@ -180,10 +180,8 @@
         </div>
     </div>
 </div>
-        </div>
-    </div>
     <div class="display-type"></div>
-</div>
+
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
 <script src="bower_components/moment/moment.js"></script>

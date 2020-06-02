@@ -1,0 +1,74 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Mpesapayment;
+use Illuminate\Http\Request;
+use Safaricom\Mpesa\Mpesa;
+
+class MpesaPaymentController extends Controller
+{
+    public function getMpesaPayment(Request $request)
+    {
+        $payment = Mpesapayment::create([
+            'TransactionType' => $request->TransactionType,
+            'TransactionId' => $request->TransactionId,
+            'TransTime' => $request->TransTime,
+            'TransAmount' => $request->TransAmount,
+            'BusinessShortCode' => $request->BusinessShortCode,
+            'BillRefNumber' => $request->BillRefNumber,
+            'InvoiceNumber' => $request->InvoiceNumber,
+            'OrgAccountBalance' => $request->OrgAccountBalance,
+            'ThirdPartyTransID' => $request->ThirdPartyTransID,
+            'MSISDN' => $request->MSISDN,
+            'FirstName' => $request->FirstName,
+            'MiddleName' => $request->MiddleName,
+            'LastName' => $request->LastName,
+            'PaymentMode' => 'Mpesa',
+
+        ]);
+    }
+
+    public function registerUrls(){
+        $token = Mpesa::generateSandBoxToken();
+
+
+//        $url = 'https://api.safaricom.co.ke/mpesa/c2b/v1/registerurl';
+        $url = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl';
+
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json','Authorization:Bearer '.$token)); //setting custom header
+
+
+        $curl_post_data = array(
+            //Fill in the request parameters with valid values
+            'ValidationURL' => 'https://propertymanagers.braxlan.com/getValidation',
+            'ConfirmationURL' => 'https://propertymanagers.braxlan.com/getPayment',
+            'ResponseType' => 'completed',
+            'ShortCode' => '601426',
+        );
+
+        $data_string = json_encode($curl_post_data);
+
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
+
+        $curl_response = curl_exec($curl);
+        print_r($curl_response);
+
+        echo $curl_response;
+
+    }
+    public function getMpesaValidation(){
+
+    }
+ public function simulate(){
+     $mpesa= new Mpesa();
+     $callbackData=$mpesa->getDataFromCallback();
+
+     $c2bTransaction=$mpesa->c2b(601426, 'CustomerPayBillOnline', 40000, 790268795, 'A1' );
+ }
+
+}

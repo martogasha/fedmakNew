@@ -16,13 +16,13 @@
                         <div class="row">
                             <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('paidTenants')}}">
                                     <div class="label">Paid Tenants</div>
-                                    <div class="value">15</div>
+                                    <div class="value">{{\App\MonthlyReport::where('status',0)->count()}}</div>
 
                                 </a>
                             </div>
                             <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('unpaidTenants')}}">
                                     <div class="label">Unpaid Tenants</div>
-                                    <div class="value">5</div>
+                                    <div class="value">{{\App\MonthlyReport::where('status',1)->count()}}</div>
                                 </a>
                             </div>
 

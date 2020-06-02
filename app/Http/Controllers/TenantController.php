@@ -17,7 +17,7 @@ class TenantController extends Controller
     public function getHouses(Request $request){
     if ($request->ajax()){
         $output = "";
-        $houses = PropertyUnit::where('property_id',$request->property)->get();
+        $houses = PropertyUnit::where('property_id',$request->property)->where('status',0)->get();
         if ($houses){
             foreach ($houses as $house){
                 $output.= '<option value='.$house->id.'>'.$house->name.'</option>';
