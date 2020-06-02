@@ -10,7 +10,9 @@ class MpesaPaymentController extends Controller
 {
     public function getPayments(){
         $payments = Mpesapayment::all();
-        return view('admin.mpesaPayments');
+        return view('admin.mpesaPayments',[
+            'payments'=>$payments
+        ]);
     }
     public function getPayment(Request $request)
     {
