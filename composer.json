@@ -19,6 +19,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "safaricom/mpesa": "^1.0",
+        "spatie/laravel-tail": "^4.2",
         "twbs/bootstrap": "^4.4"
     },
     "require-dev": {

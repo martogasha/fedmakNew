@@ -8,8 +8,13 @@ use Safaricom\Mpesa\Mpesa;
 
 class MpesaPaymentController extends Controller
 {
-    public function getMpesaPayment(Request $request)
+    public function getPayments(){
+        $payments = Mpesapayment::all();
+        return view('admin.mpesaPayments');
+    }
+    public function getPayment(Request $request)
     {
+
         $payment = Mpesapayment::create([
             'TransactionType' => $request->TransactionType,
             'TransactionId' => $request->TransactionId,
@@ -47,6 +52,7 @@ class MpesaPaymentController extends Controller
             'ConfirmationURL' => 'https://propertymanagers.braxlan.com/getPayment',
             'ResponseType' => 'completed',
             'ShortCode' => '601426',
+
         );
 
         $data_string = json_encode($curl_post_data);
@@ -61,14 +67,13 @@ class MpesaPaymentController extends Controller
         echo $curl_response;
 
     }
-    public function getMpesaValidation(){
+    public function getValidation(){
 
     }
  public function simulate(){
      $mpesa= new Mpesa();
-     $callbackData=$mpesa->getDataFromCallback();
+     $c2bTransaction= $mpesa->c2b(601426, 'CustomerPayBillOnline', 40000, 254790268795, 'A1' );
 
-     $c2bTransaction=$mpesa->c2b(601426, 'CustomerPayBillOnline', 40000, 790268795, 'A1' );
  }
 
 }

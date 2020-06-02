@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('registerUrls','MpesaPaymentController@registerUrls');
+Route::post('getPayment','MpesaPaymentController@getPayment');
+Route::post('getValidation', 'MpesaPaymentController@getValidation');
+Route::get('simulate', 'MpesaPaymentController@simulate');
 
 Route::get('home', function () {
     return view('welcome');
@@ -46,13 +50,12 @@ Route::resource('paidTenants','PaidTenantController');
 Route::resource('unpaidTenants','UnpaidTenantController');
 Route::resource('payments','PaymentController');
 Route::get('cashPayments','PaymentController@cashPayments');
+Route::get('mpesaPayments','MpesaPaymentController@getPayments');
+
 Route::resource('monthlyReview','MonthlyReviewController');
 Route::resource('sidebar','SidebarController');
 Route::resource('message','MessageController');
-Route::get('registerUrls','MpesaPaymentController@registerUrls');
-Route::post('getPayment','MpesaPaymentController@getMpesaPayment');
-Route::post('getValidation', 'MpesaPaymentController@getMpesaValidation');
-Route::get('simulate', 'MpesaPaymentController@simulate');
+
 
 
 

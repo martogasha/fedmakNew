@@ -1,6 +1,6 @@
 @include('Partials.header')
 @include('flash-message')
-<title>Cash Payments</title>
+<title>Mpesa Payments</title>
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
     <li class="breadcrumb-item"><a href="index.html">Products</a></li>
@@ -9,7 +9,7 @@
 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 <div class="content-i">
     <div class="content-box">
-        <div class="element-wrapper"><h6 class="element-header">Cash Payments</h6>
+        <div class="element-wrapper"><h6 class="element-header">Mpesa Payments</h6>
 
             <div class="element-box"><h5 class="form-header"><a class="btn btn-sm btn-secondary" type="button" data-toggle="modal" data-target="#CreateTenantModal" href="#">Process Cash Payment</a>
                 </h5>
@@ -37,19 +37,12 @@
                         </tr>
                         </tfoot>
                         <tbody>
-                        @foreach($cashes as $cache)
+                        @foreach($payments as $payment)
 
                             <tr>
-                                <td>{{$cache->tenant->name}}</td>
-                                <td>{{$cache->property}}</td>
-                                <td>{{$cache->house}}</td>
-                                <td>{{$cache->houseType}}</td>
-                                <td>Ksh: {{$cache->amount}}/=</td>
-                                <form action="{{url('deleteBill',$cache->id)}}" method="post">
-                                    @csrf
-                                    <td><button type="submit" class="btn btn-secondary">Delete</button></td>
+                                <td>{{$payment->FirstName}}</td>
+                                <td>{{$payment->LastName}}</td>
 
-                                </form>
                             </tr>
                         @endforeach
                         </tbody>
@@ -60,38 +53,7 @@
 
     </div>
 </div>
-{{--Create Tenant Modal--}}
-<div aria-hidden="true" class="onboarding-modal modal fade animated"
-     id="CreateTenantModal" role="dialog" tabindex="-1">
-    <div class="modal-dialog modal-centered" role="document">
-        <div class="modal-content text-center">
-            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                <span class="close-label">Close</span><span
-                    class="os-icon os-icon-close"></span></button>
-            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                    Cash Payment</h4>
-                <form action="{{route('payments.store')}}" method="post">
-                    @csrf
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group"><label for="">Full Name</label>
-                                <select class="form-control" id="getTenant" name="tenant_id">
-                                    <option>Select Tenant</option>
-                                    @foreach($tenants as $tenant)
-                                        <option value="{{$tenant->id}}">{{$tenant->name}}</option>
-                                    @endforeach
-                                </select></div>
-                        </div>
-                    <div class="row" id="getDet">
 
-                    </div>
-                        <button type="submit" class="btn btn-outline-secondary btn-block">Submit</button>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="display-type"></div>
 <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
