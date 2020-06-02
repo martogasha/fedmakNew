@@ -75,6 +75,7 @@ class MpesaPaymentController extends Controller
  public function simulate(){
      $mpesa= new Mpesa();
      $c2bTransaction= $mpesa->c2b(601426, 'CustomerPayBillOnline', 40000, 254790268795, 'A1' );
+     var_dump($c2bTransaction);
 
  }
 
