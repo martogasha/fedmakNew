@@ -2,9 +2,8 @@
 @include('flash-message')
 <title>Tenant Management</title>
 <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item"><a href="index.html">Products</a></li>
-    <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
+    <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
+    <li class="breadcrumb-item"><span>Tenants</span></li>
 </ul>
 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 <div class="content-i">
@@ -119,8 +118,8 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group"><label for="">House Price</label>
-                            <div class="form-group">
-                                <input class="form-control" id="getHouseDetail" name="amount" placeholder="House Price..." value="">
+                            <div class="form-group" >
+                                <input class="form-control" name="amount" id="getHouseDetail" placeholder="House Price..." value="">
                             </div>
                         </div>
                     </div>
@@ -207,7 +206,7 @@
 
         })
 
-    })
+    });
 </script>
 </body>
 <!-- Mirrored from light.pinsupreme.com/tables_datatables.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Apr 2020 15:58:12 GMT -->

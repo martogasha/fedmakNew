@@ -3,9 +3,11 @@
 <title>{{$getPropertyUnit->name}} Service Bills</title>
 
 <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item"><a href="index.html">Products</a></li>
-    <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
+    <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{url('property')}}">Property</a></li>
+    <li class="breadcrumb-item"><a href="{{url('property',$getPropertyUnit->property_id)}}">{{$getPropertyUnit->property->name}} Details</a></li>
+    <li class="breadcrumb-item"><a href="{{url('propertyUnits',$getPropertyUnit->property_id)}}">{{$getPropertyUnit->property->name}} Houses</a></li>
+    <li class="breadcrumb-item"><span>Property House/Units Service Bills</span></li>
 </ul>
 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 <div class="content-i">

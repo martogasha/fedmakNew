@@ -39,7 +39,6 @@ class MpesaPaymentController extends Controller
     public function registerUrls(){
         $token = Mpesa::generateSandBoxToken();
 
-
 //        $url = 'https://api.safaricom.co.ke/mpesa/c2b/v1/registerurl';
         $url = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl';
 

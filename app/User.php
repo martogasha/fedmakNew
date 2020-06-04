@@ -27,6 +27,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function isRole(){
+        return $this->role;
+    }
 
     /**
      * The attributes that should be cast to native types.

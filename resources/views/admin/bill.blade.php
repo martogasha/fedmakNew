@@ -1,11 +1,10 @@
 @include('Partials.header')
 @include('flash-message')
 <title>Tenant Billing</title>
-<ul class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item"><a href="index.html">Products</a></li>
-    <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
-</ul>
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
+        <li class="breadcrumb-item"><span>Tenant Billing</span></li>
+    </ul>
 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 <div class="content-i">
     <div class="content-box">

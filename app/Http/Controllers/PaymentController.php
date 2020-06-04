@@ -37,6 +37,8 @@ class PaymentController extends Controller
 
             $updatePaidTenant = MonthlyReport::where('balance','<=',0)->update(['status'=>0]);
             $updatePaidTenant1 = MonthlyReport::where('balance','>',0)->update(['status'=>1]);
+        $updateMonthlyReport = MonthlyReport::where('tenant_id',$request->tenant_id)->update(['amount'=>($request->input('amount'))]);
+
 
         return redirect()->back()->with('success','Payments Made Successfully');
 

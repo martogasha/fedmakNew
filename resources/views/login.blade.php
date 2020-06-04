@@ -28,7 +28,7 @@
         <h4 class="auth-header">Login Form</h4>
         <form action="{{route('loginCustom')}}" method="post">
             @csrf
-            <div class="form-group"><label for="">Id No/Phone No:</label><input class="form-control" name="idno" placeholder="Enter your Id no/Phone no" required>
+            <div class="form-group"><label for="">Id No:</label><input class="form-control" name="idno" placeholder="Enter your Id No" required>
                 <div class="pre-icon os-icon os-icon-user-male-circle"></div>
             </div>
             <div class="form-group"><label for="">Password</label><input class="form-control" name="password" placeholder="Enter your password" type="password" required>

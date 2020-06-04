@@ -151,12 +151,12 @@
 
                     <div class="logged-user-w">
                         <div class="logged-user-i">
-                            <div class="avatar-w"><img alt="" src="img/avatar1.jpg"></div>
+                            <div class="avatar-w"><img alt="" src="img/defaultAvatar.png"></div>
                             <div class="logged-user-menu color-style-bright">
                                 <div class="logged-user-avatar-info">
-                                    <div class="avatar-w"><img alt="" src="img/avatar1.jpg"></div>
+                                    <div class="avatar-w"><img alt="" src="img/defaultAvatar.png"></div>
                                     <div class="logged-user-info-w">
-                                        <div class="logged-user-name">Maria Gomez</div>
+                                        <div class="logged-user-name">{{\Illuminate\Support\Facades\Auth::user()->name}}</div>
                                         <div class="logged-user-role">Administrator</div>
                                     </div>
                                 </div>

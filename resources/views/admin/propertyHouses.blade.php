@@ -3,9 +3,11 @@
 <title id="getTitle"></title>
 
 <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item"><a href="index.html">Products</a></li>
-    <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
+    <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{'property'}}">Property</a></li>
+    <li class="breadcrumb-item"><a href="{{url('property',$propertyId->property_id)}}" id="pp1"></a></li>
+
+    <li class="breadcrumb-item"><span id="p1"></span></li>
 </ul>
 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 <div class="content-i">
@@ -41,7 +43,9 @@
                             <td><a href="{{url('propertyHouseServiceBill',$pUnit->id)}}"><button class="btn btn-secondary">View Service Bills</button></a> </td>
                         </tr>
                         <input type="hidden" id="propertyName" value="{{$pUnit->property->name}} Houses/Units">
-                            <input type="hidden" id="propertyId" value="{{$pUnit->property->id}}">
+                        <input type="hidden" id="propertyN" value="{{$pUnit->property->name}} Details">
+
+                        <input type="hidden" id="propertyId" value="{{$pUnit->property->id}}">
 
                         @endforeach
                         </tbody>
@@ -121,6 +125,9 @@
     $('#createServiceBillButton').append($propertyName);
     $('.onboarding-title').append($propertyName);
     $('#getTitle').append($propertyName);
+    $ppp = $('#propertyN').val();
+    $('#p1').append($propertyName);
+    $('#pp1').append($ppp);
     $('#getPropertyId').val($('#propertyId').val());
 </script>
 </body>

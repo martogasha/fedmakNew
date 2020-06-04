@@ -28,8 +28,10 @@ class PropertyHousesController extends Controller
 
     public function show($id){
         $pUnits = PropertyUnit::where('property_id',$id)->get();
+        $propertyId = PropertyUnit::where('property_id',$id)->first();
         return view('admin.propertyHouses',[
-            'pUnits'=>$pUnits
+            'pUnits'=>$pUnits,
+            'propertyId'=>$propertyId
         ]);
     }
 

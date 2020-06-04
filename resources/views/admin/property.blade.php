@@ -4,8 +4,7 @@
 
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
-    <li class="breadcrumb-item"><a href="{{url('property')}}">property</a></li>
-    <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
+    <li class="breadcrumb-item"><span>Property</span></li>
 </ul>
 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 <div class="content-i">
@@ -123,7 +122,7 @@
                             <td>{{$property->lName}}</td>
                             <td>{{$property->location}}</td>
                             <td class="text-right">{{\App\PropertyUnit::where('property_id',$property->id)->count()}}</td>
-                            <td class="text-right"><button class="btn btn-secondary">{{\App\PropertyUnit::where('status',0)->count()}}</button></td>
+                            <td class="text-right"><button class="btn btn-secondary">{{\App\PropertyUnit::where('property_id',$property->id)->where('status',0)->count()}}</button></td>
 
                             <td class="row-actions"><a href="{{url('property',$property->id)}}"><i class="os-icon os-icon-ui-49"></i>View</a>
                             </td>

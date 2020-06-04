@@ -1,6 +1,10 @@
 @include('Partials.header')
 @include('flash-message')
 <title>Service Bills</title>
+<ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
+    <li class="breadcrumb-item"><span>Service Bills</span></li>
+</ul>
 <div class="content-i">
     <div class="content-box">
         <div class="element-wrapper"><h6 class="element-header">Service Bills</h6>

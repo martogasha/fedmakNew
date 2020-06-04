@@ -1,6 +1,10 @@
 @include('Partials.header')
 @include('flash-message')
 <title>Messages</title>
+<ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
+    <li class="breadcrumb-item"><span>Message</span></li>
+</ul>
 <body class="menu-position-side menu-side-left">
 <div class="all-wrapper no-padding-content solid-bg-all">
     <div class="search-with-suggestions-w">

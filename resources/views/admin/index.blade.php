@@ -3,8 +3,6 @@
 
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item"><a href="index.html">Products</a></li>
-    <li class="breadcrumb-item"><span>Laptop with retina screen</span></li>
 </ul>
 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 <div class="content-i">
@@ -151,11 +149,11 @@
         <div class="content-panel-close"><i class="os-icon os-icon-close"></i></div>
         <div class="element-wrapper"><h6 class="element-header">Quick Links</h6>
             <div class="element-box-tp">
-                <div class="el-buttons-list full-width"><a class="btn btn-white btn-sm" href="#"><i
+                <div class="el-buttons-list full-width"><a class="btn btn-white btn-sm" href="{{url('property')}}"><i
                             class="os-icon os-icon-delivery-box-2"></i><span>Create New Property</span></a><a
-                        class="btn btn-white btn-sm" href="#"><i class="os-icon os-icon-window-content"></i><span>Recent Payments</span></a><a
-                        class="btn btn-white btn-sm" href="#"><i
-                            class="os-icon os-icon-wallet-loaded"></i><span>Store Settings</span></a></div>
+                        class="btn btn-white btn-sm" href="mpesaPayments"><i class="os-icon os-icon-window-content"></i><span>Mpesa Payments</span></a><a
+                        class="btn btn-white btn-sm" href="{{url('reportView')}}"><i
+                            class="os-icon os-icon-wallet-loaded"></i><span>Monthly Report</span></a></div>
             </div>
         </div>
         <div class="element-wrapper"><h6 class="element-header">Property Owners</h6>
