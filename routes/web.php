@@ -38,6 +38,7 @@ Route::get('profile','AdminProfileController@index');
 Route::view('test','test');
 Route::get('tenant','TenantController@index')->name('tenant');
 Route::view('tables','tables');
+Route::get('/','LoginController@index');
 Route::resource('property','PropertyController');
 Route::post('loginC','LoginController@login')->name('loginCustom');
 Route::resource('bill','BillController');
