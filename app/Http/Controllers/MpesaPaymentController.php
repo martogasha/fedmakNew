@@ -49,8 +49,8 @@ class MpesaPaymentController extends Controller
 
         $curl_post_data = array(
             //Fill in the request parameters with valid values
-            'ValidationURL' => 'https://propertymanagers.braxlan.com/getValidation',
-            'ConfirmationURL' => 'https://propertymanagers.braxlan.com/getPayment',
+            'ValidationURL' => 'https://kibe.braxlan.com/getValidation',
+            'ConfirmationURL' => 'https://kibe.braxlan.com/getPayment',
             'ResponseType' => 'completed',
             'ShortCode' => '601426',
 
@@ -86,7 +86,7 @@ class MpesaPaymentController extends Controller
      $PartyA = 254769722803;
      $PartyB = 174379;
      $PhoneNumber = 254769722803;
-     $CallBackURL = 'https://propertymanagers.braxlan.com/getPayment';
+     $CallBackURL = 'https://kibe.braxlan.com/getPayment';
      $AccountReference = 'OK';
      $TransactionDesc = 'OK';
      $Remarks = 'OK';
