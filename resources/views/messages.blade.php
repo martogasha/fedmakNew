@@ -234,7 +234,7 @@
 
                             <div class="full-chat-right">
                                 <div class="user-intro">
-                                    <div class="avatar"><img alt="" src="img/avatar1.jpg"></div>
+                                    <div class="avatar"><img alt="" src="img/defaultAvatar.png"></div>
                                     <div class="user-intro-info"><h5 class="user-name">John Mayers</h5>
                                         <div class="user-sub">San Francisco, CA</div>
                                         <div class="user-social"><a href="#"><i class="os-icon os-icon-twitter"></i></a><a
