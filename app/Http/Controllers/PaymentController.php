@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use App\Bill;
 use App\Cash;
 use App\MonthlyReport;
+use App\Property;
 use App\User;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
     public function index(){
-        return view('admin.payments');
+        $properties = Property::all();
+        return view('admin.payments',[
+            'properties'=>$properties
+        ]);
     }
     public function cashPayments(){
         $cashes = Cash::all();

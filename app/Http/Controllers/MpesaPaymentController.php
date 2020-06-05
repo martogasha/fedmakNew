@@ -77,5 +77,22 @@ class MpesaPaymentController extends Controller
      var_dump($c2bTransaction);
 
  }
+ public function lipaNaMpesa(){
+     $mpesa= new \Safaricom\Mpesa\Mpesa();
+     $BusinessShortCode = 174379;
+     $LipaNaMpesaPasskey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
+     $TransactionType = 'CustomerPayBillOnline';
+     $Amount = 40000;
+     $PartyA = 254769722803;
+     $PartyB = 174379;
+     $PhoneNumber = 254769722803;
+     $CallBackURL = 'https://propertymanagers.braxlan.com/getPayment';
+     $AccountReference = 'OK';
+     $TransactionDesc = 'OK';
+     $Remarks = 'OK';
+
+     $stkPushSimulation=$mpesa->STKPushSimulation($BusinessShortCode, $LipaNaMpesaPasskey, $TransactionType, $Amount, $PartyA, $PartyB, $PhoneNumber, $CallBackURL, $AccountReference, $TransactionDesc, $Remarks);
+     var_dump($stkPushSimulation);
+ }
 
 }

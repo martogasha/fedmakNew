@@ -32,30 +32,29 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Kikuyu Flats</td>
-                            <td>50</td>
-                            <td class="text-right">25</td>
-                            <td class="text-right">25</td>
-                            <td class="text-center">
-                                <div class="status-pill green" data-title="Complete"
-                                     data-toggle="tooltip"></div><i>Completed</i>
-                            </td>
-                            <td class="row-actions"><a href="{{url('tables')}}"><i class="os-icon os-icon-ui-49"></i>View</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Limuru Flats</td>
-                            <td>1500</td>
-                            <td class="text-right">1000</td>
-                            <td class="text-right">500</td>
-                            <td class="text-center">
-                                <div class="status-pill red" data-title="Cancelled"
-                                     data-toggle="tooltip"></div><i>Uncompleted</i>
-                            </td>
-                            <td class="row-actions"><a href="{{url('tables')}}"><i class="os-icon os-icon-ui-49"></i>View</a>
-                            </td>
-                        </tr>
+                        @foreach($properties as $property)
+                            <tr>
+                                <td>{{$property->name}}</td>
+                                <td>{{\App\PropertyUnit::where('property_id',$property->id)->count()}}</td>
+                                <td class="text-right">{{\App\MonthlyReport::where('property',$property->name)->where('status',0)->count()}}</td>
+                                <td class="text-right">{{\App\MonthlyReport::where('property',$property->name)->where('status',1)->count()}}</td>
+                                <td class="text-center">
+                                    @if((\App\MonthlyReport::where('property',$property->name)->where('status',1)->count()==0))
+                                    <div class="status-pill green" data-title="Complete" data-toggle="tooltip"></div><i>Completed</i>
+                                    @else
+                                        <div class="status-pill red" data-title="Incomplete" data-toggle="tooltip"></div><i>Completed</i>
+                                    @endif
+
+                                </td>
+                                @if((\App\MonthlyReport::where('property',$property->name)->where('status',1)->count()==0))
+                                <td class="row-actions"><a href="{{url('paidTenants')}}"><i class="os-icon os-icon-ui-49"></i>View</a>
+                                    @else
+                                    <td class="row-actions"><a href="{{url('unpaidTenants')}}"><i class="os-icon os-icon-ui-49"></i>View</a>
+                                        @endif
+
+                                    </td>
+                            </tr>
+                        @endforeach
 
                         </tbody>
                     </table>

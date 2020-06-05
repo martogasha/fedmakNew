@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Property;
 use Illuminate\Http\Request;
 
 class PaymentBillingController extends Controller
 {
     public function index(){
-        return view('admin.paymentsBilling');
+        $properties = Property::all();
+        return view('admin.paymentsBilling',[
+            'properties'=>$properties
+        ]);
     }
 }

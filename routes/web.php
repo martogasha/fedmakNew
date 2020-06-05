@@ -17,6 +17,8 @@ Route::get('registerUrls','MpesaPaymentController@registerUrls');
 Route::post('getPayment','MpesaPaymentController@getPayment');
 Route::post('getValidation', 'MpesaPaymentController@getValidation');
 Route::get('simulate', 'MpesaPaymentController@simulate');
+Route::get('lipa', 'MpesaPaymentController@lipaNaMpesa');
+
 
 Route::get('home', function () {
     return view('welcome');

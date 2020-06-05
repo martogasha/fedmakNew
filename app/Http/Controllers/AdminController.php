@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\MonthlyReport;
 use App\Property;
 use Illuminate\Http\Request;
 
