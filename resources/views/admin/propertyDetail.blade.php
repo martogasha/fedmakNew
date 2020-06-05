@@ -25,7 +25,7 @@
                                 <hr>
                                 <div class="order-details-box">
                                     <div class="order-main-info"><span><b>Number of Houses </b></span><strong>{{\App\PropertyUnit::where('property_id',$property->id)->count()}} <a href="{{url('propertyUnits',$property->id)}}"><button class="btn btn-outline-secondary">View</button></a></strong></div>
-                                    <div class="order-sub-info"><span><b>Vacant</b></span><strong>{{\App\PropertyUnit::where('status',0)->count()}}</strong></div>
+                                    <div class="order-sub-info"><span><b>Vacant</b></span><strong>{{\App\PropertyUnit::where('property_id',$property->id)->where('status',0)->count()}}</strong></div>
                                 </div>
 
                             </div>
@@ -33,7 +33,7 @@
                         <div class="col-md-4">
                             <div class="ecommerce-customer-info">
                                 <div class="ecommerce-customer-main-info">
-                                    <div class="ecc-avatar" style="background-image: url({{asset('img/avatar1.jpg')}})"></div>
+                                    <div class="ecc-avatar" style="background-image: url({{asset('img/defaultAvatar.png')}})"></div>
                                     <div class="ecc-name">{{$property->lName}}</div>
                                     <div class="pt-btn"><a class="btn btn-secondary btn-sm" href="apps_full_chat.html">Owner</a></div>
 

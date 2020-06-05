@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('admin','AdminController@index')->name('admin');
 Route::resource('tenantDetails','TenantRecordsController');
+Route::post('tenant/{id}','TenantRecordsController@update');
 Route::post('deleteUser/{id}','TenantRecordsController@deleteUser');
 Route::get('ajax','TenantController@getHouses');
 Route::get('ajax1','TenantController@getHouseDetails');

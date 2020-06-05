@@ -27,6 +27,9 @@ class TenantRecordsController extends Controller
 
 
     }
+    public function editIndex(){
+        return view('admin.editTenant');
+    }
     public function store(Request $request){
         $houseType = PropertyUnit::where('id',$request->houseNo)->first();
         $tenantDetails = User::create([
@@ -76,6 +79,21 @@ class TenantRecordsController extends Controller
         }
         $updatePropertyUnit = PropertyUnit::where('id',$request->houseNo)->update(['status'=>1]);
         return redirect()->back()->with('success','Tenant Registered Successfully');
+    }
+    public function edit($id){
+        $edit = User::find($id);
+        return view('admin.editTenant', compact('edit'));
+
+    }
+    public function update(Request $request, $id){
+        $edit = User::find($id);
+        $edit->name = $request->get('name');
+        $edit->idno = $request->get('idno');
+        $edit->phone = $request->get('phone');
+        $edit->amount = $request->get('amount');
+        $edit->save();
+        return redirect()->back()->with('success','Tenant Details Edited Successfully');
+
     }
     public function deleteUser($id){
         $deleteUser = User::find($id);

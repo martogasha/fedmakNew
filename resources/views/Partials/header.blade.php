@@ -101,7 +101,7 @@
     </div>
     <div class="layout-w">
         <div class="menu-mobile menu-activated-on-click color-scheme-dark">
-            <div class="mm-logo-buttons-w"><a class="mm-logo" href="{{url('admin')}}"><img src="img/logo.png"><span>Fedmak Agency</span></a>
+            <div class="mm-logo-buttons-w"><a class="mm-logo" href="{{url('admin')}}"><img src="{{asset('img/logo.png')}}"><span>Fedmak Agency</span></a>
                     <div class="content-panel-open">
                         <div class="os-icon os-icon-grid-circles"></div>
                     </div>
@@ -151,10 +151,10 @@
 
                     <div class="logged-user-w">
                         <div class="logged-user-i">
-                            <div class="avatar-w"><img alt="" src="img/defaultAvatar.png"></div>
+                            <div class="avatar-w"><img alt="" src="{{asset('img/defaultAvatar.png')}}"></div>
                             <div class="logged-user-menu color-style-bright">
                                 <div class="logged-user-avatar-info">
-                                    <div class="avatar-w"><img alt="" src="img/defaultAvatar.png"></div>
+                                    <div class="avatar-w"><img alt="" src="{{asset('img/defaultAvatar.png')}}"></div>
                                     <div class="logged-user-info-w">
                                         <div class="logged-user-name">{{\Illuminate\Support\Facades\Auth::user()->name}}</div>
                                         <div class="logged-user-role">Administrator</div>

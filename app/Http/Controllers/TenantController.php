@@ -14,6 +14,7 @@ class TenantController extends Controller
         return view('tenant.index');
 
     }
+
     public function getHouses(Request $request){
     if ($request->ajax()){
         $output = "";
