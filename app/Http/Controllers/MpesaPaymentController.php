@@ -91,17 +91,17 @@ class MpesaPaymentController extends Controller
 
      $curl_post_data = array(
          //Fill in the request parameters with valid values
-         'BusinessShortCode' => '174379 ',
+         'BusinessShortCode' => '174379',
          'Password' =>  $password,
          'Timestamp' => date('YmdGis'),
          'TransactionType' => 'CustomerPayBillOnline',
          'Amount"' => ' 40000',
-         'PartyA' => '254769722803 ',
-         'PartyB' => '174379 ',
-         'PhoneNumber' => ' 254769722803',
+         'PartyA' => '254769722803',
+         'PartyB' => '174379',
+         'PhoneNumber' => '254769722803',
          'CallBackURL' => 'https://kibe.braxlan.com/getPayment',
-         'AccountReference' => ' OK',
-         'TransactionDesc' => 'Ok '
+         'AccountReference' => 'OK',
+         'TransactionDesc' => 'Ok'
      );
 
      $data_string = json_encode($curl_post_data);
