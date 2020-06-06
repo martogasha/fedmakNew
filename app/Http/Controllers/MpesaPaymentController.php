@@ -80,9 +80,13 @@ class MpesaPaymentController extends Controller
  }
  public function lipaNaMpesa(){
      $token = Mpesa::generateSandBoxToken();
+     $shortCode = '174379';
+     $timestamp ='20201016213045';
+     $passKey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
 
      $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
-     $password = base64_encode('174379'.'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'.date('YmdGis'));
+     $password = base64_encode($shortCode.$passKey.$timestamp);
+     dd($password);
 
      $curl = curl_init();
      curl_setopt($curl, CURLOPT_URL, $url);
@@ -92,10 +96,10 @@ class MpesaPaymentController extends Controller
      $curl_post_data = array(
          //Fill in the request parameters with valid values
          'BusinessShortCode' => '174379',
-         'Password' =>  $password,
-         'Timestamp' => date('YmdGis'),
+         'Password' => $password,
+         'Timestamp' => '20201016213045',
          'TransactionType' => 'CustomerPayBillOnline',
-         'Amount' => '40000',
+         'Amount' => '5',
          'PartyA' => "254769722803",
          'PartyB' => '174379',
          'PhoneNumber' => "254769722803",
