@@ -99,12 +99,12 @@ class MpesaPaymentController extends Controller
          'Timestamp' => '20201016213045',
          'TransactionType' => 'CustomerPayBillOnline',
          'Amount' => '5',
-         'PartyA' => "254769722803",
+         'PartyA' => '254769722803',
          'PartyB' => '174379',
-         'PhoneNumber' => "254769722803",
+         'PhoneNumber' => '254769722803',
          'CallBackURL' => 'https://kibe.braxlan.com/getPayment',
-         'AccountReference' => 'OK',
-         'TransactionDesc' => 'Ok'
+         'AccountReference' => 'Test',
+         'TransactionDesc' => 'testing'
      );
 
      $data_string = json_encode($curl_post_data);

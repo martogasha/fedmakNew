@@ -125,7 +125,9 @@ trait AuthenticatesUsers
      */
     protected function authenticated(Request $request, $user)
     {
-        //
+        if ((Auth::user()->role)==1){
+            return redirect(url('admin'));
+        }
     }
 
     /**
