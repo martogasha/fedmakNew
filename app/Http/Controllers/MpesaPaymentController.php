@@ -119,11 +119,8 @@ class MpesaPaymentController extends Controller
      curl_setopt($curl, CURLOPT_POST, true);
      curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
 
-     $curl_response = curl_exec($curl);
-     print_r($curl_response);
+     return redirect()->back()->with('error','PUT YOUR PIN TO MAKE PAYMENT');
 
-     echo $curl_response;
-     redirect()->back()->with('error'.'PUT YOUR PIN TO MAKE PAYMENT');
  }
 
 }
