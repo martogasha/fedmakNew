@@ -104,7 +104,7 @@ class MpesaPaymentController extends Controller
          'Password' => $password,
          'Timestamp' => '20201016213045',
          'TransactionType' => 'CustomerPayBillOnline',
-         'Amount' =>'1',
+         'Amount' =>'$amount',
          'PartyA' => $tUser,
          'PartyB' => '174379',
          'PhoneNumber' => $tUser,
