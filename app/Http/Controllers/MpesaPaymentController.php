@@ -83,7 +83,7 @@ class MpesaPaymentController extends Controller
      $user = Auth::user()->phone;
      $consNumber = 254;
      $tUser = $consNumber. $user;
-
+     $amount =Auth::user()->amount;
      $token = Mpesa::generateSandBoxToken();
      $shortCode = '174379';
      $timestamp ='20201016213045';
@@ -103,7 +103,7 @@ class MpesaPaymentController extends Controller
          'Password' => $password,
          'Timestamp' => '20201016213045',
          'TransactionType' => 'CustomerPayBillOnline',
-         'Amount' => Auth::user()->amount,
+         'Amount' =>$amount,
          'PartyA' => $tUser,
          'PartyB' => '174379',
          'PhoneNumber' => $tUser,
