@@ -80,11 +80,12 @@ class MpesaPaymentController extends Controller
 
  }
  public function lipaNaMpesa(){
+
+     $token = Mpesa::generateSandBoxToken();
      $user = Auth::user()->phone;
      $consNumber = 254;
      $tUser = $consNumber. $user;
      $amount =Auth::user()->amount;
-     $token = Mpesa::generateSandBoxToken();
      $shortCode = '174379';
      $timestamp ='20201016213045';
      $passKey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
@@ -103,7 +104,7 @@ class MpesaPaymentController extends Controller
          'Password' => $password,
          'Timestamp' => '20201016213045',
          'TransactionType' => 'CustomerPayBillOnline',
-         'Amount' =>$amount,
+         'Amount' =>'1',
          'PartyA' => $tUser,
          'PartyB' => '174379',
          'PhoneNumber' => $tUser,
