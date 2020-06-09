@@ -119,10 +119,7 @@ class MpesaPaymentController extends Controller
      curl_setopt($curl, CURLOPT_POST, true);
      curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
 
-     $curl_response = curl_exec($curl);
-     print_r($curl_response);
-
-     echo 'Input Pin';
+     $curl_response = 'Input Pin';
  }
 
 }
