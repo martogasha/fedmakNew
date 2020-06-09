@@ -8,6 +8,7 @@ use App\MonthlyReport;
 use App\Property;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
@@ -23,6 +24,12 @@ class PaymentController extends Controller
         return view('admin.cashPayments',[
             'tenants'=>$tenants,
             'cashes'=>$cashes
+        ]);
+    }
+    public function TenantPayments(){
+       $cashes = Cash::where('house',auth()->user()->house->name)->orderByDesc('id')->get();
+        return view('tenant.cashPayments',[
+            'cashes'=>$cashes,
         ]);
     }
     public function store(Request $request){

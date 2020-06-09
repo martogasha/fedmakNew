@@ -20,7 +20,7 @@ Route::get('simulate', 'MpesaPaymentController@simulate');
 Route::get('lipa', 'MpesaPaymentController@lipaNaMpesa');
 
 
-Route::get('home', function () {
+Route::get('hhh', function () {
     return view('welcome');
 });
     Route::middleware('auth')->group(function () {
@@ -56,6 +56,13 @@ Route::get('home', function () {
         Route::resource('monthlyReview', 'MonthlyReviewController');
         Route::resource('sidebar', 'SidebarController');
         Route::resource('message', 'MessageController');
+
+        //tenant routes
+        Route::resource('home', 'TenantController');
+        Route::get('tenant/payments', 'PaymentController@TenantPayments');
+
+
+
     });
 
 

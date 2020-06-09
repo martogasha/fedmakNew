@@ -128,6 +128,9 @@ trait AuthenticatesUsers
         if ((Auth::user()->role)==1){
             return redirect(url('admin'));
         }
+        else{
+            return redirect(url('home'));
+        }
     }
 
     /**

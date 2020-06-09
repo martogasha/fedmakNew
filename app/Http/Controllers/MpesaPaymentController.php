@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mpesapayment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Safaricom\Mpesa\Mpesa;
 
 class MpesaPaymentController extends Controller
@@ -79,6 +80,10 @@ class MpesaPaymentController extends Controller
 
  }
  public function lipaNaMpesa(){
+     $user = Auth::user()->phone;
+     $consNumber = 254;
+     $tUser = $consNumber. $user;
+
      $token = Mpesa::generateSandBoxToken();
      $shortCode = '174379';
      $timestamp ='20201016213045';
@@ -98,12 +103,12 @@ class MpesaPaymentController extends Controller
          'Password' => $password,
          'Timestamp' => '20201016213045',
          'TransactionType' => 'CustomerPayBillOnline',
-         'Amount' => '5',
-         'PartyA' => '254790268795',
+         'Amount' => '1',
+         'PartyA' => $tUser,
          'PartyB' => '174379',
-         'PhoneNumber' => '254790268795',
+         'PhoneNumber' => $tUser,
          'CallBackURL' => 'https://kibe.braxlan.com/getPayment',
-         'AccountReference' => 'Brayo',
+         'AccountReference' => 'Test',
          'TransactionDesc' => 'testing'
      );
 

@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\MonthlyReport;
 use App\Property;
 use App\PropertyUnit;
 use App\PropertyUnitServiceBill;
 use App\Test;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TenantController extends Controller
 {
     public function index(){
-        return view('tenant.index');
+        $bal = MonthlyReport::where('tenant_id',Auth::id())->first();
+        return view('tenant.index',[
+            'bal'=>$bal
+        ]);
 
     }
 

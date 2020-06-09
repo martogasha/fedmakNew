@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/fedmak</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="fedmak@localhost [2]" uuid="832603c2-e0a8-4b44-a1c2-31cbf0cd420c">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/fedmak</jdbc-url>
+    </data-source>
   </component>
 </project>
