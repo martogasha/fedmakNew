@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Cash;
 use App\Mpesapayment;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Safaricom\Mpesa\Mpesa;
@@ -119,8 +121,10 @@ class MpesaPaymentController extends Controller
      curl_setopt($curl, CURLOPT_POST, true);
      curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
 
-     return view('tenant.cashPayments')->with('error','INPUT PIN');
+     $curl_response = curl_exec($curl);
+     print_r($curl_response);
 
+     return redirect()->back()->with('success','INPUT PIN');
  }
 
 }
