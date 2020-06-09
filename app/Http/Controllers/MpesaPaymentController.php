@@ -123,6 +123,7 @@ class MpesaPaymentController extends Controller
      print_r($curl_response);
 
      echo $curl_response;
+     redirect()->back()->with('error'.'PUT YOUR PIN TO MAKE PAYMENT');
  }
 
 }
