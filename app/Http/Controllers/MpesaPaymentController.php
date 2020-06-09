@@ -112,6 +112,7 @@ class MpesaPaymentController extends Controller
          'AccountReference' => 'Test',
          'TransactionDesc' => 'testing'
      );
+     return redirect()->back()->with('error','PUT YOUR PIN TO MAKE PAYMENT');
 
      $data_string = json_encode($curl_post_data);
 
@@ -119,7 +120,6 @@ class MpesaPaymentController extends Controller
      curl_setopt($curl, CURLOPT_POST, true);
      curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
 
-     return redirect()->back()->with('error','PUT YOUR PIN TO MAKE PAYMENT');
 
  }
 
