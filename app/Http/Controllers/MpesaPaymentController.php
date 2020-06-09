@@ -103,7 +103,7 @@ class MpesaPaymentController extends Controller
          'Password' => $password,
          'Timestamp' => '20201016213045',
          'TransactionType' => 'CustomerPayBillOnline',
-         'Amount' => '1',
+         'Amount' => Auth::user()->amount,
          'PartyA' => $tUser,
          'PartyB' => '174379',
          'PhoneNumber' => $tUser,
@@ -122,23 +122,6 @@ class MpesaPaymentController extends Controller
      print_r($curl_response);
 
      echo $curl_response;
- }
- public function stkPush(){
-     $mpesa= new \Safaricom\Mpesa\Mpesa();
-     $BusinessShortCode = 174379;
-     $LipaNaMpesaPasskey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
-     $TransactionType = 'CustomerPayBillOnline';
-     $Amount = 40000;
-     $PartyA = 254769722803;
-     $PartyB = 174379;
-     $PhoneNumber = 254769722803;
-     $CallBackURL = 'https://kibe.braxlan.com/getPayment';
-     $AccountReference = 'OK';
-     $TransactionDesc = 'OK';
-     $Remarks = 'OK';
-
-     $stkPushSimulation=$mpesa->STKPushSimulation($BusinessShortCode, $LipaNaMpesaPasskey, $TransactionType, $Amount, $PartyA, $PartyB, $PhoneNumber, $CallBackURL, $AccountReference, $TransactionDesc, $Remarks);
-     var_dump($stkPushSimulation);
  }
 
 }

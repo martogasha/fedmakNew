@@ -68,7 +68,7 @@
                 <span class="close-label">Close</span><span
                     class="os-icon os-icon-close"></span></button>
             <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
-                    Cash Payment</h4>
+                    Mpesa Payment</h4>
                 <form action="{{url('lipa')}}" method="get">
                     <div class="row">
                         <div class="col-sm-12">
