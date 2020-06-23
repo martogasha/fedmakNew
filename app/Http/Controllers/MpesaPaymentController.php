@@ -86,8 +86,8 @@ class MpesaPaymentController extends Controller
      $token = Mpesa::generateSandBoxToken();
      $user = 254729226356;
      $consNumber = 254;
-     $tUser = $consNumber. $user;
-     $amount =Auth::user()->amount;
+     $tUser = 254729226356;
+     $amount =500;
      $shortCode = '174379';
      $timestamp ='20201016213045';
      $passKey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
