@@ -84,7 +84,7 @@ class MpesaPaymentController extends Controller
  public function lipaNaMpesa(){
 
      $token = Mpesa::generateSandBoxToken();
-     $user = Auth::user()->phone;
+     $user = 254729226356;
      $consNumber = 254;
      $tUser = $consNumber. $user;
      $amount =Auth::user()->amount;

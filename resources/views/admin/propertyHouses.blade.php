@@ -4,7 +4,7 @@
 
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
-    <li class="breadcrumb-item"><a href="{{'property'}}">Property</a></li>
+    <li class="breadcrumb-item"><a href="{{url('property')}}">Property</a></li>
     <li class="breadcrumb-item"><a href="{{url('property',$propertyId->property_id)}}" id="pp1"></a></li>
 
     <li class="breadcrumb-item"><span id="p1"></span></li>

@@ -7,6 +7,7 @@ use App\MonthlyReport;
 use App\Property;
 use App\PropertyUnit;
 use App\PropertyUnitServiceBill;
+use App\ServiceBill;
 use App\Test;
 use App\User;
 use Illuminate\Http\Request;
@@ -32,6 +33,9 @@ class TenantRecordsController extends Controller
     }
     public function store(Request $request){
         $houseType = PropertyUnit::where('id',$request->houseNo)->first();
+        $serviceBill = PropertyUnitServiceBill::where('propertyUnit_id',$houseType->id)->where('interval','once')->first();
+        $deposit = $serviceBill->amount;
+        $amount = ($request->amount) - $deposit;
         $tenantDetails = User::create([
 
             'name'=>$request->input('name'),
@@ -40,7 +44,7 @@ class TenantRecordsController extends Controller
             'property_id'=>$request->input('property'),
             'house_id'=>$request->input('houseNo'),
             'houseType'=>$houseType->type,
-            'amount'=>$request->input('amount'),
+            'amount'=>$amount,
             'role'==2,
             'password'==Hash::make('123456'),
         ]);

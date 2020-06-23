@@ -23,7 +23,7 @@
                             <th>Phone No.</th>
                             <th>House No.</th>
                             <th>House Type</th>
-                            <th>Total Payable Amount</th>
+                            <th>Monthly Payable Amount</th>
                             <th>Action</th>
                         </tr>
                         </thead>

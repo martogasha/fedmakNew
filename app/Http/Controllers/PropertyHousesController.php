@@ -20,7 +20,7 @@ class PropertyHousesController extends Controller
             'name'=>$request->input('houseNo'),
             'type'=>$request->input('type'),
             'property_id'=>$request->input('property_id'),
-            'status'=> 0
+            'status'=>0
         ]);
 
         return redirect(url('propertyUnits',$request->property_id))->with('success','PropertyHouse/Unit Created Successfully');

@@ -54,9 +54,56 @@
             <div class="element-box-tp">
                 <div class="el-buttons-list full-width"><a class="btn btn-white btn-sm" href="{{url('property')}}"><i
                             class="os-icon os-icon-delivery-box-2"></i><span>Send Complaint</span></a><a
-                        class="btn btn-white btn-sm" href="mpesaPayments"><i class="os-icon os-icon-window-content"></i><span>Lipa na Mpesa</span></a><a
+                        class="btn btn-white btn-sm"  href="{{url('tenant/payments')}}"><i class="os-icon os-icon-window-content"></i><span>Lipa na Mpesa</span></a><a
                         class="btn btn-white btn-sm" href="{{url('reportView')}}"><i
                             class="os-icon os-icon-wallet-loaded"></i><span>Monthly Report</span></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{{--Create Tenant Modal--}}
+<div aria-hidden="true" class="onboarding-modal modal fade animated"
+     id="CreateTenantModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-centered" role="document">
+        <div class="modal-content text-center">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                <span class="close-label">Close</span><span
+                    class="os-icon os-icon-close"></span></button>
+            <div class="onboarding-content with-gradient"><h4 class="onboarding-title">
+                    Mpesa Payment</h4>
+                <form action="{{url('lipa')}}" method="get">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group"><label for="">Full Name</label>
+                                <input class="form-control" name="name" value="{{\Illuminate\Support\Facades\Auth::user()->name}}">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group"><label for="">Property</label>
+                                <input class="form-control" name="name" value="{{\Illuminate\Support\Facades\Auth::user()->property->name}}">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group"><label for="">House No</label>
+                                <input class="form-control" name="name" value="{{\Illuminate\Support\Facades\Auth::user()->house->name}}">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group"><label for="">House Type</label>
+                                <input class="form-control" name="name" value="{{\Illuminate\Support\Facades\Auth::user()->house->type}}">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group"><label for="">Amount</label>
+                                <input class="form-control" name="name" value="{{\Illuminate\Support\Facades\Auth::user()->amount}}">
+                            </div>
+                        </div>
+                        <div class="row" id="getDet">
+
+                        </div>
+                        <button type="submit" class="btn btn-outline-secondary btn-block">Pay Via Mpesa</button>
+
+                </form>
             </div>
         </div>
     </div>

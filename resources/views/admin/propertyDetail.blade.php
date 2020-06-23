@@ -24,7 +24,7 @@
                                 </div>
                                 <hr>
                                 <div class="order-details-box">
-                                    <div class="order-main-info"><span><b>Number of Houses </b></span><strong>{{\App\PropertyUnit::where('property_id',$property->id)->count()}} <a href="{{url('propertyUnits',$property->id)}}"><button class="btn btn-outline-secondary">View</button></a></strong></div>
+                                    <div class="order-main-info"><span><b>Number of Houses </b></span><strong>{{\App\PropertyUnit::where('property_id',$property->id)->where('status',0)->orWhere('status',1)->count()}} <a href="{{url('propertyUnits',$property->id)}}"><button class="btn btn-outline-secondary">View</button></a></strong></div>
                                     <div class="order-sub-info"><span><b>Vacant</b></span><strong>{{\App\PropertyUnit::where('property_id',$property->id)->where('status',0)->count()}}</strong></div>
                                 </div>
 
@@ -93,6 +93,7 @@
                                 <input class="form-control" name="type" placeholder="Enter House Type..." value="">
                             </div>
                         </div>
+
                         <input type="hidden" name="property_id" value="{{$property->id}}">
                         <button class="btn-outline-secondary btn-block" type="submit">Submit</button>
                     </div>

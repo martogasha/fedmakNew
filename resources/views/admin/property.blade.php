@@ -121,7 +121,7 @@
                             <td>{{$property->name}}</td>
                             <td>{{$property->lName}}</td>
                             <td>{{$property->location}}</td>
-                            <td class="text-right">{{\App\PropertyUnit::where('property_id',$property->id)->count()}}</td>
+                            <td class="text-right">{{\App\PropertyUnit::where('property_id',$property->id)->where('status',0)->orWhere('status',1)->count()}}</td>
                             <td class="text-right"><button class="btn btn-secondary">{{\App\PropertyUnit::where('property_id',$property->id)->where('status',0)->count()}}</button></td>
 
                             <td class="row-actions"><a href="{{url('property',$property->id)}}"><i class="os-icon os-icon-ui-49"></i>View</a>
