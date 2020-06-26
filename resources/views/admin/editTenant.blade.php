@@ -50,6 +50,11 @@
                                                 placeholder="{{$edit->house->name}}" type="text">
                                             <div class="help-block form-text with-errors form-control-feedback"></div>
                                         </div>
+                                        <div class="form-group"><label for="">House</label><input
+                                                class="form-control" data-error="Your House is invalid"
+                                                placeholder="{{$edit->house->type}}" name="houseType" type="text">
+                                            <div class="help-block form-text with-errors form-control-feedback"></div>
+                                        </div>
                                         <div class="form-group"><label for="">Amount</label><input
                                                 class="form-control" data-error="Your Amount is invalid"
                                                 placeholder="{{$edit->amount}}" name="amount" required="required" type="text" value="{{$edit->amount}}">

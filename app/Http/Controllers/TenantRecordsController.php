@@ -152,6 +152,8 @@ class TenantRecordsController extends Controller
         $edit->idno = $request->get('idno');
         $edit->phone = $request->get('phone');
         $edit->amount = $request->get('amount');
+        $edit->houseType = $request->get('houseType');
+
         $edit->save();
         return redirect()->back()->with('success','Tenant Details Edited Successfully');
 
