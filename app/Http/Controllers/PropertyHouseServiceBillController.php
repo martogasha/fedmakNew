@@ -47,6 +47,8 @@ class PropertyHouseServiceBillController extends Controller
         $edit = PropertyUnitServiceBill::find($id);
         $edit->service_id = $request->input('service_id');
         $edit->amount = $request->input('amount');
+        $edit->interval = $request->input('interval');
+
         $edit->save();
         return redirect()->back()->with('success','Service Bill Updated Successfully');
 

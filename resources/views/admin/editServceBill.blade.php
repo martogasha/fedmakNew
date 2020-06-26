@@ -39,6 +39,11 @@
                                                 placeholder="{{$edit->amount}}" name="amount" required="required" type="text" value="{{$edit->amount}}">
                                             <div class="help-block form-text with-errors form-control-feedback"></div>
                                         </div>
+                                        <div class="form-group"><label for="">Amount</label><input
+                                                class="form-control" data-error="Your Name is invalid"
+                                                placeholder="{{$edit->interval}}" name="interval" required="required" type="text" value="{{$edit->interval}}">
+                                            <div class="help-block form-text with-errors form-control-feedback"></div>
+                                        </div>
                                         <button type="submit" class="btn btn-secondary">Save Changes</button>
 
                                     </form>

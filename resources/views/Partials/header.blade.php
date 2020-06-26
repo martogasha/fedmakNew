@@ -101,7 +101,7 @@
     </div>
     <div class="layout-w">
         <div class="menu-mobile menu-activated-on-click color-scheme-dark">
-            <div class="mm-logo-buttons-w"><a class="mm-logo" href="{{url('admin')}}"><img src="{{asset('img/logo.png')}}"><span>Fedmak Agency</span></a>
+            <div class="mm-logo-buttons-w"><a class="mm-logo" href="{{url('admin')}}"><img src="{{asset('img/logo.png')}}"><span>Gabriel Kibe Agency</span></a>
                     <div class="content-panel-open">
                         <div class="os-icon os-icon-grid-circles"></div>
                     </div>
