@@ -51,7 +51,7 @@
                             <td>{{$tenant->houseType}}</td>
                             <td>Ksh: {{$tenant->amount}}/=</td>
 
-                                <td><a href="{{route('tenantDetails.edit',$tenant->id)}}"><button class="btn btn-secondary">Edit</button></a></td>
+                                <td><a href="{{route('tenantDetails.edit',$tenant->id)}}"><button class="btn btn-primary">Edit</button></a></td>
                                 <form action="{{url('deleteUser',$tenant->id)}}" method="post">
                                     @csrf
                                     <td><button class="btn btn-secondary">Delete</button></td>
