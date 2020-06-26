@@ -6,6 +6,7 @@ use App\Bill;
 use App\Cash;
 use App\MonthlyReport;
 use App\Property;
+use App\Report;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,6 +50,16 @@ class PaymentController extends Controller
             $updatePaidTenant = MonthlyReport::where('balance','<=',0)->update(['status'=>0]);
             $updatePaidTenant1 = MonthlyReport::where('balance','>',0)->update(['status'=>1]);
         $updateMonthlyReport = MonthlyReport::where('tenant_id',$request->tenant_id)->update(['amount'=>($request->input('amount'))]);
+
+        $getTenant = User::where('id',$request->tenant_id)->first();
+        $report = Report::create([
+            'name'=>$getTenant->name,
+            'property'=>$request->input('property'),
+            'house'=>$request->input('house'),
+            'houseType'=>$request->input('houseType'),
+            'amount'=>$request->input('amount'),
+            'status' => 0
+        ]);
 
 
         return redirect()->back()->with('success','Payments Made Successfully');

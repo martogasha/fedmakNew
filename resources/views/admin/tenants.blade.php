@@ -125,6 +125,17 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-6">
+                        <div class="form-group"><label for="">Deposit</label>
+                            <div class="form-group">
+                                <select class="form-control"  name="deposit">
+                                        <option value="1">With Deposit</option>
+                                        <option value="0">No Deposit</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
                     <button type="submit" class="btn btn-outline-secondary btn-block">Submit</button>
 

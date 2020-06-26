@@ -26,6 +26,7 @@
                             <th>Service Bill</th>
                             <th>Amount</th>
                             <th>Interval</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -33,6 +34,7 @@
                             <th>Service Bill</th>
                             <th>Amount</th>
                             <th>Interval</th>
+                            <th>Action</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -41,6 +43,9 @@
                             <td>{{$UServiceBill->service->name}}</td>
                             <td>{{$UServiceBill->amount}}</td>
                             <td>{{$UServiceBill->interval}}</td>
+                            <form action="{{route('propertyHouseServiceBill.edit',$UServiceBill->id)}}">
+                            <td><button type="submit" class="btn btn-primary">Edit</button> </td>
+                            </form>
                         </tr>
                         @endforeach
                         </tbody>

@@ -35,4 +35,20 @@ class PropertyHouseServiceBillController extends Controller
         ]);
 
     }
+    public function edit($id){
+        $edit = PropertyUnitServiceBill::find($id);
+        $services = ServiceBill::all();
+        return view('admin.editServceBill',[
+            'edit'=>$edit,
+            'services'=>$services
+        ]);
+    }
+    public function update(Request $request,$id){
+        $edit = PropertyUnitServiceBill::find($id);
+        $edit->service_id = $request->input('service_id');
+        $edit->amount = $request->input('amount');
+        $edit->save();
+        return redirect()->back()->with('success','Service Bill Updated Successfully');
+
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bill;
 use App\MonthlyReport;
+use App\Report;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -87,8 +88,20 @@ class BillController extends Controller
                 'balance'=>$request->input('amount'),
                 'status'=>1
             ]);
-            return redirect()->back()->with('success','Tenant Billed Successfully');
         }
+        $getTenant = User::where('id',$request->tenant_id)->first();
+        $report = Report::create([
+            'name'=>$getTenant->name,
+            'property'=>$request->input('property'),
+            'house'=>$request->input('house'),
+            'houseType'=>$request->input('houseType'),
+            'amount'=>$request->input('amount'),
+            'status'=>1
+        ]);
+
+        return redirect()->back()->with('success','Tenant Billed Successfully');
+
+
 
     }
     public function deleteBill($id){

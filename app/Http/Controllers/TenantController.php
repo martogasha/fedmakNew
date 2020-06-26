@@ -38,7 +38,7 @@ class TenantController extends Controller
     public function getHouseDetails(Request $request){
         if ($request->ajax()){
             $output = "";
-            $house = PropertyUnitServiceBill::where('propertyUnit_id',$request->houseNo)->sum('amount');
+            $house = PropertyUnitServiceBill::where('propertyUnit_id',$request->houseNo)->where('interval','monthly')->sum('amount');
             if ($house) {
                 $output= $house;
             }

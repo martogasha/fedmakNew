@@ -7,6 +7,7 @@ use App\MonthlyReport;
 use App\Property;
 use App\PropertyUnit;
 use App\PropertyUnitServiceBill;
+use App\Report;
 use App\ServiceBill;
 use App\Test;
 use App\User;
@@ -35,7 +36,7 @@ class TenantRecordsController extends Controller
         $houseType = PropertyUnit::where('id',$request->houseNo)->first();
         $serviceBill = PropertyUnitServiceBill::where('propertyUnit_id',$houseType->id)->where('interval','once')->first();
         $deposit = $serviceBill->amount;
-        $amount = ($request->amount) - $deposit;
+        $amount = ($request->amount);
         $tenantDetails = User::create([
 
             'name'=>$request->input('name'),
@@ -48,39 +49,95 @@ class TenantRecordsController extends Controller
             'role'==2,
             'password'==Hash::make('123456'),
         ]);
-        $users = User::where('role',2)->get();
-        foreach ($users as $user) {
-            $getServiceBillAmount = PropertyUnitServiceBill::where('propertyUnit_id', $user->house_id)->sum('amount');
+        if ($request->deposit ==1){
+            $users = User::where('role',2)->get();
+            foreach ($users as $user) {
+                $getServiceBillAmount = PropertyUnitServiceBill::where('propertyUnit_id', $user->house_id)->sum('amount');
 
-            $billing = Bill::create([
-                'tenant_id' => $user->id,
-                'property' => $user->property->name,
-                'house' => $user->house->name,
-                'houseType' => $user->houseType,
-                'amount' => $getServiceBillAmount,
-
-            ]);
-            $checkBill = MonthlyReport::where('tenant_id', $user->id)->first();
-            if ($checkBill) {
-
-                $getBalance = $checkBill->balance;
-                $totalBalance = $getBalance + $getServiceBillAmount;
-                $updateAmount = MonthlyReport::where('tenant_id', $user->id)->update(['balance' => ($totalBalance)]);
-
-                $updatePaidTenant = MonthlyReport::where('balance', '<=', 0)->update(['status' => 0]);
-                $updatePaidTenant1 = MonthlyReport::where('balance', '>', 0)->update(['status' => 1]);
-            } else {
-                $monthlyReport = MonthlyReport::create([
+                $billing = Bill::create([
                     'tenant_id' => $user->id,
                     'property' => $user->property->name,
                     'house' => $user->house->name,
                     'houseType' => $user->houseType,
                     'amount' => $getServiceBillAmount,
-                    'balance' => $getServiceBillAmount,
+
+                ]);
+                $checkBill = MonthlyReport::where('tenant_id', $user->id)->first();
+                if ($checkBill) {
+
+                    $getBalance = $checkBill->balance;
+                    $totalBalance = $getBalance + $getServiceBillAmount;
+                    $updateAmount = MonthlyReport::where('tenant_id', $user->id)->update(['balance' => ($totalBalance)]);
+
+                    $updatePaidTenant = MonthlyReport::where('balance', '<=', 0)->update(['status' => 0]);
+                    $updatePaidTenant1 = MonthlyReport::where('balance', '>', 0)->update(['status' => 1]);
+                }
+                else {
+                    $monthlyReport = MonthlyReport::create([
+                        'tenant_id' => $user->id,
+                        'property' => $user->property->name,
+                        'house' => $user->house->name,
+                        'houseType' => $user->houseType,
+                        'amount' => $getServiceBillAmount,
+                        'balance' => $getServiceBillAmount,
+                        'status' => 1
+                    ]);
+                }
+                $report = Report::create([
+                    'name'=>$user->name,
+                    'property' => $user->property->name,
+                    'house' => $user->house->name,
+                    'houseType' => $user->houseType,
+                    'amount' => $getServiceBillAmount,
                     'status' => 1
                 ]);
             }
         }
+        else{
+            $users = User::where('role',2)->get();
+            foreach ($users as $user) {
+                $getServiceBillAmount = PropertyUnitServiceBill::where('propertyUnit_id', $user->house_id)->where('interval','monthly')->sum('amount');
+
+                $billing = Bill::create([
+                    'tenant_id' => $user->id,
+                    'property' => $user->property->name,
+                    'house' => $user->house->name,
+                    'houseType' => $user->houseType,
+                    'amount' => $getServiceBillAmount,
+
+                ]);
+                $checkBill = MonthlyReport::where('tenant_id', $user->id)->first();
+                if ($checkBill) {
+
+                    $getBalance = $checkBill->balance;
+                    $totalBalance = $getBalance + $getServiceBillAmount;
+                    $updateAmount = MonthlyReport::where('tenant_id', $user->id)->update(['balance' => ($totalBalance)]);
+
+                    $updatePaidTenant = MonthlyReport::where('balance', '<=', 0)->update(['status' => 0]);
+                    $updatePaidTenant1 = MonthlyReport::where('balance', '>', 0)->update(['status' => 1]);
+                }
+                else {
+                    $monthlyReport = MonthlyReport::create([
+                        'tenant_id' => $user->id,
+                        'property' => $user->property->name,
+                        'house' => $user->house->name,
+                        'houseType' => $user->houseType,
+                        'amount' => $getServiceBillAmount,
+                        'balance' => $getServiceBillAmount,
+                        'status' => 1
+                    ]);
+                }
+                $report = Report::create([
+                    'name'=>$user->name,
+                    'property' => $user->property->name,
+                    'house' => $user->house->name,
+                    'houseType' => $user->houseType,
+                    'amount' => $getServiceBillAmount,
+                    'status' => 1
+                ]);
+            }
+        }
+
         $updatePropertyUnit = PropertyUnit::where('id',$request->houseNo)->update(['status'=>1]);
         return redirect()->back()->with('success','Tenant Registered Successfully');
     }
@@ -102,6 +159,14 @@ class TenantRecordsController extends Controller
     public function deleteUser($id){
         $deleteUser = User::find($id);
         $changePropertyUnitStatus = PropertyUnit::where('id',$deleteUser->house_id)->update(['status'=>0]);
+        $deleteTenantBill = Bill::where('tenant_id',$id)->delete();
+        $getBalance = MonthlyReport::where('tenant_id',$id)->first();
+        if ($getBalance->status ==0) {
+            $deleteMontlyReport = MonthlyReport::where('tenant_id', $id)->delete();
+        }
+        else{
+            return redirect()->back()->with('error','Tenant Should Clear Balance first');
+        }
         $deleteUser->delete();
         ;
 

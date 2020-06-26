@@ -34,9 +34,13 @@ Route::get('hhh', function () {
         Route::get('ajax2', 'BillController@getTenant');
         Route::get('ajax3', 'MessageController@getMessage');
         Route::resource('propertyUnits', 'PropertyHousesController');
+        Route::post('editHouse/{id}', 'PropertyHousesController@update');
+
         Route::get('getHouses', 'PropertyHousesController@getHouses');
         Route::resource('serviceBill', 'ServiceBillController');
         Route::resource('propertyHouseServiceBill', 'PropertyHouseServiceBillController');
+        Route::post('editServiceBill/{id}', 'PropertyHouseServiceBillController@update');
+
         Route::get('profile', 'AdminProfileController@index');
         Route::view('test', 'test');
         Route::get('tenant', 'TenantController@index')->name('tenant');
@@ -56,6 +60,8 @@ Route::get('hhh', function () {
         Route::resource('monthlyReview', 'MonthlyReviewController');
         Route::resource('sidebar', 'SidebarController');
         Route::resource('message', 'MessageController');
+        Route::resource('report', 'ReportController');
+
 
         //tenant routes
         Route::resource('home', 'TenantController');

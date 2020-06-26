@@ -34,6 +34,21 @@ class PropertyHousesController extends Controller
             'propertyId'=>$propertyId
         ]);
     }
+    public function edit($id){
+        $edit = PropertyUnit::where('id',$id)->first();
+        return view('admin.editHouse',[
+            'edit'=>$edit
+        ]);
+
+    }
+    public function update(Request $request, $id){
+        $edit = PropertyUnit::find($id);
+        $edit->name = $request->input('name');
+        $edit->type = $request->input('type');
+
+        $edit->save();
+        return redirect()->back()->with('success','House Details Updated Successfully');
+    }
 
 
 }

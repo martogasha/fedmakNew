@@ -26,6 +26,7 @@
                             <th>House No.</th>
                             <th>House Type</th>
                             <th>Action</th>
+                            <th>Edit</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -33,6 +34,7 @@
                             <th>House No.</th>
                             <th>House Type</th>
                             <th>Action</th>
+                            <th>Edit</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -40,7 +42,13 @@
                         <tr>
                             <td>{{$pUnit->name}}</td>
                             <td>{{$pUnit->type}}</td>
-                            <td><a href="{{url('propertyHouseServiceBill',$pUnit->id)}}"><button class="btn btn-secondary">View Service Bills</button></a> </td>
+                            <td><a href="{{url('propertyHouseServiceBill',$pUnit->id)}}"><button class="btn btn-secondary">View Service Bills</button></a>
+                            </td>
+                            <form action="{{route('propertyUnits.edit',$pUnit->id)}}">
+                            <td>
+                                <button class="btn btn-primary">Edit</button>
+                            </td>
+                            </form>
                         </tr>
                         <input type="hidden" id="propertyName" value="{{$pUnit->property->name}} Houses/Units">
                         <input type="hidden" id="propertyN" value="{{$pUnit->property->name}} Details">

@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Bill;
 use App\MonthlyReport;
 use App\PropertyUnitServiceBill;
+use App\Report;
 use App\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
@@ -65,7 +66,8 @@ class BillTenantEveryMonth extends Command
                 $updatePaidTenant1 = MonthlyReport::where('balance', '>', 0)->update(['status' => 1]);
                 $updateAmount = MonthlyReport::where('tenant_id', $user->id)->update(['amount' => ($getServiceBillAmount)]);
 
-            } else {
+            }
+            else {
                 $monthlyReport = MonthlyReport::create([
                     'tenant_id' => $user->id,
                     'property' => $user->property->name,
@@ -76,6 +78,16 @@ class BillTenantEveryMonth extends Command
                     'status' => 1
                 ]);
             }
+
+            $report = Report::create([
+                'name'=>$user->name,
+                'property' => $user->property->name,
+                'house' => $user->house->name,
+                'houseType' => $user->houseType,
+                'amount' => $getServiceBillAmount,
+                'status' => 1
+            ]);
+
         }
     }
 }
