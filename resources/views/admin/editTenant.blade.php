@@ -45,14 +45,14 @@
                                                 placeholder="{{$edit->property->name}}"  type="text">
                                             <div class="help-block form-text with-errors form-control-feedback"></div>
                                         </div>
-                                        <div class="form-group"><label for="">House</label><input
+                                        <div class="form-group"><label for="">House No</label><input
                                                 class="form-control" data-error="Your House is invalid"
                                                 placeholder="{{$edit->house->name}}" type="text">
                                             <div class="help-block form-text with-errors form-control-feedback"></div>
                                         </div>
                                         <div class="form-group"><label for="">HouseType</label><input
                                                 class="form-control" data-error="Your House is invalid"
-                                                placeholder="{{$edit->type}}" name="houseType" type="text">
+                                                placeholder="{{$edit->houseType}}" name="houseType" type="text">
                                             <div class="help-block form-text with-errors form-control-feedback"></div>
                                         </div>
                                         <div class="form-group"><label for="">Amount</label><input
