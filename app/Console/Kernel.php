@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-         $schedule->command('BillTenant:monthly')->hourly();
+         $schedule->command('BillTenant:monthly')->weekly();
     }
 
     /**

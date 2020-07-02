@@ -7,6 +7,7 @@
 <div class="content-panel-toggler"><i class="os-icon os-icon-grid-squares-22"></i><span>Sidebar</span></div>
 <div class="content-i">
     <div class="content-box">
+        @if(isset($bal))
         @if($bal->balance >0)
         <button class="btn btn-secondary">Balance: {{$bal->balance}}</button>
         @else
@@ -14,6 +15,8 @@
 
         @endif
 
+
+        @endif
         <div class="row">
             <div class="col-sm-12">
                 <div class="element-wrapper">
