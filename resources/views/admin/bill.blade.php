@@ -79,7 +79,8 @@
                                     @foreach($tenants as $tenant)
                                         <option value="{{$tenant->id}}">{{$tenant->name}}</option>
                                     @endforeach
-                                </select></div>
+                                </select>
+                            </div>
                         </div>
                     <div class="row" id="getDet">
 

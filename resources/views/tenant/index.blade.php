@@ -31,12 +31,6 @@
                             </div>
 
                             <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="#">
-                                    <div class="label">Reports</div>
-                                    <i class="fa fa-book fa-3x" aria-hidden="true">
-                                    </i>
-                                </a>
-                            </div>
-                            <div class="col-sm-4 col-xxxl-3"><a class="element-box el-tablo" href="{{url('message')}}">
                                     <div class="label">Messages</div>
                                     <i class="fa fa-envelope fa-3x" aria-hidden="true">
                                         <div class="trending trending-up-basic"><span>New Message</span></div>
@@ -55,11 +49,9 @@
         <div class="content-panel-close"><i class="os-icon os-icon-close"></i></div>
         <div class="element-wrapper"><h6 class="element-header">Quick Links</h6>
             <div class="element-box-tp">
-                <div class="el-buttons-list full-width"><a class="btn btn-white btn-sm" href="{{url('property')}}"><i
+                <div class="el-buttons-list full-width"><a class="btn btn-white btn-sm" href="#"><i
                             class="os-icon os-icon-delivery-box-2"></i><span>Send Complaint</span></a><a
-                        class="btn btn-white btn-sm"  href="{{url('tenant/payments')}}"><i class="os-icon os-icon-window-content"></i><span>Lipa na Mpesa</span></a><a
-                        class="btn btn-white btn-sm" href="{{url('reportView')}}"><i
-                            class="os-icon os-icon-wallet-loaded"></i><span>Monthly Report</span></a></div>
+                        class="btn btn-white btn-sm"  href="{{url('tenant/payments')}}"><i class="os-icon os-icon-window-content"></i><span>Lipa na Mpesa</span></a>
             </div>
         </div>
     </div>

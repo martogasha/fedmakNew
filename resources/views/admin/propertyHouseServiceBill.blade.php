@@ -1,6 +1,6 @@
+<title>{{$getPropertyUnit->name}} Service Bills</title>
 @include('Partials.header')
 @include('flash-message')
-<title>{{$getPropertyUnit->name}} Service Bills</title>
 
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
@@ -26,7 +26,8 @@
                             <th>Service Bill</th>
                             <th>Amount</th>
                             <th>Interval</th>
-                            <th>Action</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -34,7 +35,8 @@
                             <th>Service Bill</th>
                             <th>Amount</th>
                             <th>Interval</th>
-                            <th>Action</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -45,6 +47,10 @@
                             <td>{{$UServiceBill->interval}}</td>
                             <form action="{{route('propertyHouseServiceBill.edit',$UServiceBill->id)}}">
                             <td><button type="submit" class="btn btn-primary">Edit</button> </td>
+                            </form>
+                            <form action="{{url('propertyHouseServiceBill',$UServiceBill->id)}}" method="post">
+                                @csrf
+                                <td><button type="submit" class="btn btn-danger">Delete</button> </td>
                             </form>
                         </tr>
                         @endforeach

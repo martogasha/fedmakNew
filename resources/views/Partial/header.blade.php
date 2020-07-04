@@ -57,18 +57,6 @@
                     <div class="ssg-name">Customers</div>
                     <div class="ssg-info">12 Total</div>
                 </div>
-                <div class="ssg-content">
-                    <div class="ssg-items ssg-items-list"><a class="ssg-item" href="users_profile_big.html">
-                            <div class="item-media" style="background-image: url(img/avatar1.jpg)"></div>
-                            <div class="item-name">John Ma<span>yer</span>s</div>
-                        </a><a class="ssg-item" href="users_profile_big.html">
-                            <div class="item-media" style="background-image: url(img/avatar2.jpg)"></div>
-                            <div class="item-name">Th<span>omas</span> Mullier</div>
-                        </a><a class="ssg-item" href="users_profile_big.html">
-                            <div class="item-media" style="background-image: url(img/avatar3.jpg)"></div>
-                            <div class="item-name">Kim C<span>olli</span>ns</div>
-                        </a></div>
-                </div>
             </div>
             <div class="search-suggestions-group">
                 <div class="ssg-header">
@@ -123,30 +111,6 @@
                     <div class="messages-notifications os-dropdown-trigger os-dropdown-position-left"><i
                             class="os-icon os-icon-mail-14"></i>
                         <div class="new-messages-count">{{\App\Message::where('status',0)->count()}}</div>
-                        <div class="os-dropdown light message-list">
-                            <ul>
-                                <li><a href="#">
-                                        <div class="user-avatar-w"><img alt="" src="img/avatar1.jpg"></div>
-                                        <div class="message-content"><h6 class="message-from">John Mayers</h6><h6
-                                                class="message-title">Account Update</h6></div>
-                                    </a></li>
-                                <li><a href="#">
-                                        <div class="user-avatar-w"><img alt="" src="img/avatar2.jpg"></div>
-                                        <div class="message-content"><h6 class="message-from">Phil Jones</h6><h6
-                                                class="message-title">Secutiry Updates</h6></div>
-                                    </a></li>
-                                <li><a href="#">
-                                        <div class="user-avatar-w"><img alt="" src="img/avatar3.jpg"></div>
-                                        <div class="message-content"><h6 class="message-from">Bekky Simpson</h6><h6
-                                                class="message-title">Vacation Rentals</h6></div>
-                                    </a></li>
-                                <li><a href="#">
-                                        <div class="user-avatar-w"><img alt="" src="img/avatar4.jpg"></div>
-                                        <div class="message-content"><h6 class="message-from">Alice Priskon</h6><h6
-                                                class="message-title">Payment Confirmation</h6></div>
-                                    </a></li>
-                            </ul>
-                        </div>
                     </div>
 
                     <div class="logged-user-w">
@@ -162,7 +126,7 @@
                                 </div>
                                 <div class="bg-icon"><i class="os-icon os-icon-wallet-loaded"></i></div>
                                 <ul>
-                                    <li><a href="{{url('profile')}}"><i
+                                    <li><a href="{{url('tenant/profile')}}"><i
                                                 class="os-icon os-icon-user-male-circle2"></i><span>Profile Details</span></a>
                                     </li>
 

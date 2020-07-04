@@ -94,7 +94,6 @@ class MpesaPaymentController extends Controller
 
      $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
      $password = base64_encode($shortCode.$passKey.$timestamp);
-
      $curl = curl_init();
      curl_setopt($curl, CURLOPT_URL, $url);
      curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json','Authorization:Bearer '.$token)); //setting custom header

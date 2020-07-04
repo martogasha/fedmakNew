@@ -143,14 +143,20 @@ class TenantRecordsController extends Controller
     }
     public function edit($id){
         $edit = User::find($id);
-        return view('admin.editTenant', compact('edit'));
+        $properties = Property::all();
+        return view('admin.editTenant',[
+            'edit'=>$edit,
+            'properties'=>$properties
+        ]);
 
     }
     public function update(Request $request, $id){
         $edit = User::find($id);
+        $getPropertyId = Property::where('name',$request->property)->first();
         $edit->name = $request->get('name');
         $edit->idno = $request->get('idno');
         $edit->phone = $request->get('phone');
+        $edit->property_id = $getPropertyId->id;
         $edit->amount = $request->get('amount');
         $edit->houseType = $request->get('houseType');
 

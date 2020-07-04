@@ -22,6 +22,7 @@
                             <th>House No.</th>
                             <th>HouseType</th>
                             <th>Paid Amount</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -32,6 +33,7 @@
                             <th>House No.</th>
                             <th>House Type</th>
                             <th>Paid Amount</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                         </tfoot>
@@ -44,6 +46,7 @@
                                 <td>{{$cache->house}}</td>
                                 <td>{{$cache->houseType}}</td>
                                 <td>Ksh: {{$cache->amount}}/=</td>
+                                <td>{{$cache->created_at}}</td>
                                 <form action="{{url('deleteBill',$cache->id)}}" method="post">
                                     @csrf
                                     <td><button type="submit" class="btn btn-secondary">Delete</button></td>

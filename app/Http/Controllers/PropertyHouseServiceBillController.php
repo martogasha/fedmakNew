@@ -53,4 +53,9 @@ class PropertyHouseServiceBillController extends Controller
         return redirect()->back()->with('success','Service Bill Updated Successfully');
 
     }
+    public function delete($id){
+        $delete = PropertyUnitServiceBill::find($id);
+        $delete->delete();
+        return redirect()->back()->with('success','Service Bill Deleted Successfully');
+    }
 }
