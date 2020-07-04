@@ -75,7 +75,7 @@ class TenantController extends Controller
                                             </div>
                                             <div class="form-group"><label for="">House Amount</label><input
                                                     class="form-control" data-error="Amount is invalid"
-                                                    placeholder='.$getServiceBill->amount.' name="amount    " required="required" type="text" value='.$getServiceBill->amount.'>
+                                                    placeholder='.$getServiceBill->amount.' name="amount" required="required" type="text" value='.$getServiceBill->amount.'>
                                                 <div class="help-block form-text with-errors form-control-feedback"></div>
                                             </div>
         ';
