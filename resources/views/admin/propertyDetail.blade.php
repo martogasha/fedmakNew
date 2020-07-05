@@ -57,7 +57,7 @@
                                     <div class="ecc-sub-info-row">
                                         <div class="sub-info-label">Payment Method</div>
                                         <div class="sub-info-value"><img alt="" src="img/mastercard.png"
-                                                                         style="width: auto; height: 40px;"><span>ending 8374</span>
+                                                                         style="width: auto; height: 40px;"><span>Mpesa</span>
                                         </div>
                                     </div>
                                 </div>

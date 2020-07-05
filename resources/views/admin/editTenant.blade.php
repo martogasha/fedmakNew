@@ -56,6 +56,18 @@
                                             <div id="houseType">
 
                                             </div>
+                                            <div id="alt">
+                                                <div class="form-group"><label for="">House Type</label><input
+                                                        class="form-control" data-error="Your Phone No is invalid"
+                                                        placeholder="House Type" name="houseType1" type="text">
+                                                    <div class="help-block form-text with-errors form-control-feedback"></div>
+                                                </div>
+                                                <div class="form-group"><label for="">Amount</label><input
+                                                        class="form-control" data-error="Amount is invalid"
+                                                        placeholder="Amount" name="amount1"type="text">
+                                                    <div class="help-block form-text with-errors form-control-feedback"></div>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="form-buttons-w">
@@ -121,7 +133,8 @@
 
         });
     });
-    $('#getProperty').on('change', function () {
+
+    $('#getProperty').on('change', function (){
         $value = $('#getProperty').val();
         $.ajax({
             type: "get",
@@ -140,6 +153,7 @@
     });
 
     $('#getHouses').on('change',function () {
+        $('#alt').hide();
         $value = $('#getHouses').val();
         $.ajax({
             type: "get",

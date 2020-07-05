@@ -50,9 +50,9 @@ class TenantRecordsController extends Controller
             'password'==Hash::make('123456'),
         ]);
         if ($request->deposit ==1){
-            $users = User::where('role',2)->get();
-            foreach ($users as $user) {
-                $getServiceBillAmount = PropertyUnitServiceBill::where('propertyUnit_id', $user->house_id)->sum('amount');
+            $house = PropertyUnit::where('id',$request->houseNo)->first();
+                $getServiceBillAmount = PropertyUnitServiceBill::where('propertyUnit_id', $house->id)->sum('amount');
+                $user = User::where('idno',$request->idno)->first();
 
                 $billing = Bill::create([
                     'tenant_id' => $user->id,
@@ -91,14 +91,15 @@ class TenantRecordsController extends Controller
                     'amount' => $getServiceBillAmount,
                     'status' => 1
                 ]);
-            }
+
         }
         else{
-            $users = User::where('role',2)->get();
-            foreach ($users as $user) {
-                $getServiceBillAmount = PropertyUnitServiceBill::where('propertyUnit_id', $user->house_id)->where('interval','monthly')->sum('amount');
+            $house = PropertyUnit::where('id',$request->houseNo)->first();
+                $getServiceBillAmount = PropertyUnitServiceBill::where('propertyUnit_id', $house->id)->where('interval','monthly')->sum('amount');
+            $user = User::where('idno',$request->idno)->first();
 
-                $billing = Bill::create([
+
+            $billing = Bill::create([
                     'tenant_id' => $user->id,
                     'property' => $user->property->name,
                     'house' => $user->house->name,
@@ -135,7 +136,6 @@ class TenantRecordsController extends Controller
                     'amount' => $getServiceBillAmount,
                     'status' => 1
                 ]);
-            }
         }
 
         $updatePropertyUnit = PropertyUnit::where('id',$request->houseNo)->update(['status'=>1]);
@@ -144,21 +144,46 @@ class TenantRecordsController extends Controller
     public function edit($id){
         $edit = User::find($id);
         $properties = Property::all();
+        $getProperty = User::where('id',$id)->first();
+        $getHouse = PropertyUnit::where('property_id',$getProperty->property_id)->first();
+        $getServiceBill = PropertyUnitServiceBill::where('propertyUnit_id',$getHouse->id)->first();
         return view('admin.editTenant',[
             'edit'=>$edit,
-            'properties'=>$properties
+            'properties'=>$properties,
+            'getHouse'=>$getHouse,
+            'getServiceBill'=>$getServiceBill
         ]);
 
     }
     public function update(Request $request, $id){
         $edit = User::find($id);
+        $getHouse = PropertyUnit::where('id',$edit->house_id)->first();
+        if ($request->amount) {
+            $serviceBill = PropertyUnitServiceBill::where('propertyUnit_id', $getHouse->id)->update(['amount' => $request->amount]);
+        }
+        else{
+            $serviceBill = PropertyUnitServiceBill::where('propertyUnit_id',$getHouse->id)->update(['amount'=>$request->amount1]);
+
+        }
         $getPropertyId = Property::where('name',$request->property)->first();
         $edit->name = $request->get('name');
         $edit->idno = $request->get('idno');
         $edit->phone = $request->get('phone');
         $edit->property_id = $getPropertyId->id;
-        $edit->amount = $request->get('amount');
-        $edit->houseType = $request->get('houseType');
+        if ($request->amount) {
+            $edit->amount = $request->get('amount');
+        }
+        else{
+            $edit->amount = $request->get('amount1');
+
+        }
+        if ($request->houseType) {
+            $edit->houseType = $request->get('houseType');
+        }
+        else{
+            $edit->houseType = $request->get('houseType1');
+
+        }
 
         $edit->save();
         return redirect()->back()->with('success','Tenant Details Edited Successfully');
@@ -169,6 +194,7 @@ class TenantRecordsController extends Controller
         $changePropertyUnitStatus = PropertyUnit::where('id',$deleteUser->house_id)->update(['status'=>0]);
         $deleteTenantBill = Bill::where('tenant_id',$id)->delete();
         $getBalance = MonthlyReport::where('tenant_id',$id)->first();
+        if (isset($getBalance))
         if ($getBalance->status ==0) {
             $deleteMontlyReport = MonthlyReport::where('tenant_id', $id)->delete();
         }

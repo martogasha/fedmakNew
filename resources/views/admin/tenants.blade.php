@@ -54,7 +54,7 @@
                                 <td><a href="{{route('tenantDetails.edit',$tenant->id)}}"><button class="btn btn-primary">Edit</button></a></td>
                                 <form action="{{url('deleteUser',$tenant->id)}}" method="post">
                                     @csrf
-                                    <td><button class="btn btn-secondary">Delete</button></td>
+                                    <td><button class="btn btn-danger">Delete</button></td>
 
                                 </form>
                         </tr>
@@ -82,18 +82,18 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group"><label for="">Full Name</label>
-                            <input class="form-control" name="name" placeholder="Enter Full name..." value="">
+                            <input class="form-control" name="name" placeholder="Enter Full name..." value="" required>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group"><label for="">Id No.</label>
-                            <input class="form-control" name="idno" placeholder="Enter Id No..." value="">
+                            <input class="form-control" name="idno" placeholder="Enter Id No..." value="" required>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group"><label for="">Phone No</label>
                             <div class="form-group">
-                                <input class="form-control" name="phone" placeholder="Enter Phone No..." value="">
+                                <input class="form-control" name="phone" placeholder="Enter Phone No..." value="" required>
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                     <div class="col-sm-6">
                         <div class="form-group"><label for="">House Price</label>
                             <div class="form-group" >
-                                <input class="form-control" name="amount" id="getHouseDetail" placeholder="House Price..." value="">
+                                <input class="form-control" name="amount" id="getHouseDetail" placeholder="House Price..." value="" required>
                             </div>
                         </div>
                     </div>
