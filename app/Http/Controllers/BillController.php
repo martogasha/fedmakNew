@@ -74,7 +74,8 @@ class BillController extends Controller
                 $totalBalance = $getBalance + $request->amount;
                 $updateAmount = MonthlyReport::where('tenant_id',$request->tenant_id)->update(['balance'=>($totalBalance)]);
 
-            $updatePaidTenant = MonthlyReport::where('balance','<=',0)->update(['status'=>0]);
+            $updatePaidTenant = MonthlyReport::where('balance','<=',0)->where('tenant_id',$request->tenant_id)->update(['status'=>0]);
+            $updatePaid = MonthlyReport::where('tenant_id',$request->tenant_id)->update(['amount'=>$request->amount]);
             $updatePaidTenant1 = MonthlyReport::where('balance','>',0)->update(['status'=>1]);
             return redirect()->back()->with('success','Tenant Billed Successfully');
         }
@@ -96,7 +97,7 @@ class BillController extends Controller
             'house'=>$request->input('house'),
             'houseType'=>$request->input('houseType'),
             'amount'=>$request->input('amount'),
-            'status'=>1
+            'status'=>'bill'
         ]);
 
         return redirect()->back()->with('success','Tenant Billed Successfully');

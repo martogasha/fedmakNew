@@ -62,8 +62,8 @@ class BillTenantEveryMonth extends Command
                 $totalBalance = $getBalance + $getServiceBillAmount;
                 $updateAmount = MonthlyReport::where('tenant_id', $user->id)->update(['balance' => ($totalBalance)]);
 
-                $updatePaidTenant = MonthlyReport::where('balance', '<=', 0)->update(['status' => 0]);
-                $updatePaidTenant1 = MonthlyReport::where('balance', '>', 0)->update(['status' => 1]);
+                $updatePaidTenant = MonthlyReport::where('balance', '<=', 0)->where('tenant_id',$user->id)->update(['status' => 0]);
+                $updatePaidTenant1 = MonthlyReport::where('balance', '>', 0)->where('tenant_id',$user->id)->update(['status' => 1]);
                 $updateAmount = MonthlyReport::where('tenant_id', $user->id)->update(['amount' => ($getServiceBillAmount)]);
 
             }
@@ -85,7 +85,7 @@ class BillTenantEveryMonth extends Command
                 'house' => $user->house->name,
                 'houseType' => $user->houseType,
                 'amount' => $getServiceBillAmount,
-                'status' => 1
+                'status' => 'bill'
             ]);
 
         }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Bill;
+use App\Cash;
 use App\MonthlyReport;
 use App\Property;
 use App\PropertyUnit;
@@ -189,22 +190,32 @@ class TenantRecordsController extends Controller
         return redirect()->back()->with('success','Tenant Details Edited Successfully');
 
     }
-    public function deleteUser($id){
+    public function deleteUser($id)
+    {
         $deleteUser = User::find($id);
-        $changePropertyUnitStatus = PropertyUnit::where('id',$deleteUser->house_id)->update(['status'=>0]);
-        $deleteTenantBill = Bill::where('tenant_id',$id)->delete();
-        $getBalance = MonthlyReport::where('tenant_id',$id)->first();
-        if (isset($getBalance))
-        if ($getBalance->status ==0) {
-            $deleteMontlyReport = MonthlyReport::where('tenant_id', $id)->delete();
-        }
-        else{
-            return redirect()->back()->with('error','Tenant Should Clear Balance first');
-        }
-        $deleteUser->delete();
-        ;
+        $changePropertyUnitStatus = PropertyUnit::where('id', $deleteUser->house_id)->update(['status' => 0]);
+        $deleteTenantBill = Bill::where('tenant_id', $id)->delete();
+        $deleteCash = Cash::where('tenant_id',$id)->delete();
+        $getBalance = MonthlyReport::where('tenant_id', $id)->first();
 
-        return redirect()->back()->with('success','Tenant Deleted Successfully');
+        if (isset($getBalance))
+            switch ($getBalance) {
+                case $getBalance->balance == 0:
+                    $deleteMontlyReport = MonthlyReport::where('tenant_id', $id)->delete();
+                    $deleteUser->delete();
+                    return redirect()->back()->with('success','Tenant Deleted Successfully');
+                    break;
+                case $getBalance->balance > 0:
+                    return redirect()->back()->with('error', 'Tenant Should Clear Balance of  first');
+                    break;
+                case $getBalance->balance<0:
+                    return redirect()->back()->with('error','Tenant needs refund');
+                break;
+
+
+            }
+
+
 
     }
 }

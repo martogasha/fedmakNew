@@ -47,8 +47,8 @@ class PaymentController extends Controller
             $totalBalance = $balance - $request->amount;
             $updateMonthlyReport = MonthlyReport::where('tenant_id',$request->tenant_id)->update(['balance'=>($totalBalance)]);
 
-            $updatePaidTenant = MonthlyReport::where('balance','<=',0)->update(['status'=>0]);
-            $updatePaidTenant1 = MonthlyReport::where('balance','>',0)->update(['status'=>1]);
+            $updatePaidTenant = MonthlyReport::where('balance','<=',0)->where('tenant_id',$request->tenant_id)->update(['status'=>0]);
+            $updatePaidTenant1 = MonthlyReport::where('balance','>',0)->where('tenant_id',$request->tenant_id)->update(['status'=>1]);
         $updateMonthlyReport = MonthlyReport::where('tenant_id',$request->tenant_id)->update(['amount'=>($request->input('amount'))]);
 
         $getTenant = User::where('id',$request->tenant_id)->first();
@@ -58,7 +58,7 @@ class PaymentController extends Controller
             'house'=>$request->input('house'),
             'houseType'=>$request->input('houseType'),
             'amount'=>$request->input('amount'),
-            'status' => 0
+            'status' => 'paid'
         ]);
 
 

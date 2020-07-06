@@ -67,6 +67,7 @@
 
     </div>
 </div>
+
 {{--Create Tenant Modal--}}
 <div aria-hidden="true" class="onboarding-modal modal fade animated"
      id="CreateTenantModal" role="dialog" tabindex="-1">
