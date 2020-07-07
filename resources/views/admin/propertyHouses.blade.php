@@ -27,6 +27,7 @@
                             <th>House Type</th>
                             <th>Action</th>
                             <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -35,6 +36,7 @@
                             <th>House Type</th>
                             <th>Action</th>
                             <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -44,11 +46,17 @@
                             <td>{{$pUnit->type}}</td>
                             <td><a href="{{url('propertyHouseServiceBill',$pUnit->id)}}"><button class="btn btn-secondary">View Service Bills</button></a>
                             </td>
-                            <form action="{{route('propertyUnits.edit',$pUnit->id)}}">
                             <td>
+                            <form action="{{route('propertyUnits.edit',$pUnit->id)}}">
                                 <button class="btn btn-primary">Edit</button>
-                            </td>
                             </form>
+                            </td>
+                            <td>
+                            <form action="{{url('propertyUnitsDelete',$pUnit->id)}}" method="post">
+                            @csrf
+                                    <button class="btn btn-danger">Delete</button>
+                            </form>
+                            </td>
                         </tr>
                         <input type="hidden" id="propertyName" value="{{$pUnit->property->name}} Houses/Units">
                         <input type="hidden" id="propertyN" value="{{$pUnit->property->name}} Details">

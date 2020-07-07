@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\PropertyUnit;
+use App\PropertyUnitServiceBill;
 use App\Test;
+use App\User;
 use Illuminate\Http\Request;
 
 class PropertyHousesController extends Controller
@@ -48,6 +50,20 @@ class PropertyHousesController extends Controller
 
         $edit->save();
         return redirect()->back()->with('success','House Details Updated Successfully');
+    }
+    public function delete($id){
+        $deleteHouse = PropertyUnit::find($id);
+        $userHouse = User::where('house_id',$deleteHouse->id)->first();
+        if ($userHouse){
+            return redirect()->back()->with('error','House is Occupied');
+        }
+        else{
+            $deleteHouse->delete();
+            $deleteHouseServiceBill = PropertyUnitServiceBill::where('propertyUnit_id',$id)->delete();
+
+            return redirect()->back()->with('success','House Successfully Removed');
+
+        }
     }
 
 

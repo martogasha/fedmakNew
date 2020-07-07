@@ -38,6 +38,8 @@ Route::get('hhh', function () {
 
 
         Route::resource('propertyUnits', 'PropertyHousesController');
+        Route::post('propertyUnitsDelete/{id}', 'PropertyHousesController@delete');
+
         Route::post('editHouse/{id}', 'PropertyHousesController@update');
 
         Route::get('getHouses', 'PropertyHousesController@getHouses');
