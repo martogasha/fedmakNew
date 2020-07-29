@@ -15,12 +15,6 @@ class ProfileController extends Controller
             'tenant'=>$tenant
         ]);
     }
-    public function admin(){
-        $tenant = User::where('id',Auth::id())->first();
-        return view('admin.profile',[
-            'tenant'=>$tenant
-        ]);
-    }
     public function edit(Request $request){
         $edit = User::find($request->tenantId);
         $edit->idno = $request->idno;
