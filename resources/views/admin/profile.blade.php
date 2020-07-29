@@ -12,7 +12,8 @@
                         <div class="col-sm-12">
                             <div class="element-wrapper">
                                 <div class="element-box">
-                                    <form id="formValidate">
+                                    <form id="formValidate" action="{{url('editAdmin',$tenant->id)}}" method="post">
+                                        @csrf
                                         <div class="element-info">
                                             <div class="element-info-with-icon">
                                                 <div class="element-info-icon">
@@ -23,7 +24,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="form-group"><label for="">Id No</label><input
                                                 class="form-control" data-error="Your email address is invalid"
                                                 placeholder="Enter IdNo" value="{{$tenant->idno}}" name="idno" required="required" type="text">

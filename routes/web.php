@@ -78,6 +78,8 @@ Route::get('hhh', function () {
         Route::resource('tenant/profile', 'ProfileController');
         Route::post('editTenantDetails', 'ProfileController@edit');
         Route::post('editAdmin/{id}', 'ProfileController@editAdmin');
+        Route::post('adminProfile', 'ProfileController@admin');
+
 
 
 
