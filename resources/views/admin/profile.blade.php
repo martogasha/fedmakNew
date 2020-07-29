@@ -1,4 +1,6 @@
 @include('Partials.header')
+@include('flash-message')
+<title>Profile</title>
         <div class="content-w">
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>

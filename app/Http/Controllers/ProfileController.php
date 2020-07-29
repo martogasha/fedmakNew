@@ -31,7 +31,7 @@ class ProfileController extends Controller
         $edit->phone = $request->phone;
         $edit->password = Hash::make($request->password);
         $edit->save();
-        return redirect(url('login'))->with('success','Admin Details Updated Successfully');
+        return redirect()->back()->with('success','Admin Details Updated Successfully');
 
 
 
