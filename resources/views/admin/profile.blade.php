@@ -23,20 +23,21 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="form-group"><label for="">Id No</label><input
                                                 class="form-control" data-error="Your email address is invalid"
-                                                placeholder="Enter email" required="required" type="text">
+                                                placeholder="Enter IdNo" value="{{$tenant->idno}}" name="idno" required="required" type="text">
                                             <div class="help-block form-text with-errors form-control-feedback"></div>
                                         </div>
                                         <div class="form-group"><label for="">Phone No</label><input
                                                 class="form-control" data-error="Your email address is invalid"
-                                                placeholder="Enter email" required="required" type="text">
+                                                placeholder="Enter Phone Number" value="{{$tenant->phone}}" name="phone" required="required" type="text">
                                             <div class="help-block form-text with-errors form-control-feedback"></div>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group"><label for=""> Password</label><input
-                                                        class="form-control" data-minlength="6" placeholder="Password"
+                                                        class="form-control" data-minlength="6" name="password" placeholder="Password"
                                                         required="required" type="password">
                                                     <div class="help-block form-text text-muted form-control-feedback">
                                                         Minimum of 6 characters

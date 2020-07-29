@@ -25,4 +25,15 @@ class ProfileController extends Controller
 
 
     }
+    public function editAdmin(Request $request, $id){
+        $edit = User::find($id);
+        $edit->idno = $request->idno;
+        $edit->phone = $request->phone;
+        $edit->password = Hash::make($request->password);
+        $edit->save();
+        return redirect(url('login'))->with('success','Admin Details Updated Successfully');
+
+
+
+    }
 }

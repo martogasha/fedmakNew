@@ -77,6 +77,8 @@ Route::get('hhh', function () {
         Route::get('tenant/payments', 'PaymentController@TenantPayments');
         Route::resource('tenant/profile', 'ProfileController');
         Route::post('editTenantDetails', 'ProfileController@edit');
+        Route::post('editAdmin/{id}', 'ProfileController@editAdmin');
+
 
 
 
