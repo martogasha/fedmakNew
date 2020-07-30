@@ -118,15 +118,6 @@
     ga('create', 'UA-42863888-9', 'auto');
     ga('send', 'pageview');</script>
 </body>
-<style>
-    body{
-        padding:100px 0;
-        background-color:#efefef
-    }
-    a, a:hover{
-        color:#333
-    }
-</style>
 
 <script>
     $(document).ready(function() {
