@@ -38,22 +38,25 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                <div class="form-group"><label for=""> Password</label><input
-                                                        class="form-control" data-minlength="6" name="password" placeholder="Password"
-                                                        required="required" type="password">
-                                                    <div class="help-block form-text text-muted form-control-feedback">
-                                                        Minimum of 6 characters
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <div class="input-group" id="show_hide_password">
+                                                        <input class="form-control" name="password" placeholder="Password" type="password">
+                                                        <div class="input-group-addon">
+                                                            <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
-                                                <div class="form-group"><label for="">Confirm Password</label><input
-                                                        class="form-control"
-                                                        data-match-error="Passwords don&#39;t match"
-                                                        placeholder="Confirm Password" required="required"
-                                                        type="password">
-                                                    <div
-                                                        class="help-block form-text with-errors form-control-feedback"></div>
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <div class="input-group" id="show_hide_password1">
+                                                        <input class="form-control" name="Confirm" placeholder="Confirm Password" type="password">
+                                                        <div class="input-group-addon">
+                                                            <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -69,9 +72,7 @@
                 </div>
             </div>
         </div>
-    </div>
     <div class="display-type"></div>
-</div>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
 <script src="bower_components/moment/moment.js"></script>
@@ -117,5 +118,45 @@
     ga('create', 'UA-42863888-9', 'auto');
     ga('send', 'pageview');</script>
 </body>
+<style>
+    body{
+        padding:100px 0;
+        background-color:#efefef
+    }
+    a, a:hover{
+        color:#333
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        $("#show_hide_password a").on('click', function(event) {
+            event.preventDefault();
+            if($('#show_hide_password input').attr("type") == "text"){
+                $('#show_hide_password input').attr('type', 'password');
+                $('#show_hide_password i').addClass( "fa-eye-slash" );
+                $('#show_hide_password i').removeClass( "fa-eye" );
+            }else if($('#show_hide_password input').attr("type") == "password"){
+                $('#show_hide_password input').attr('type', 'text');
+                $('#show_hide_password i').removeClass( "fa-eye-slash" );
+                $('#show_hide_password i').addClass( "fa-eye" );
+            }
+        });
+    });
+    $(document).ready(function() {
+        $("#show_hide_password1 a").on('click', function(event) {
+            event.preventDefault();
+            if($('#show_hide_password1 input').attr("type") == "text"){
+                $('#show_hide_password1 input').attr('type', 'password');
+                $('#show_hide_password1 i').addClass( "fa-eye-slash" );
+                $('#show_hide_password1 i').removeClass( "fa-eye" );
+            }else if($('#show_hide_password1 input').attr("type") == "password"){
+                $('#show_hide_password1 input').attr('type', 'text');
+                $('#show_hide_password1 i').removeClass( "fa-eye-slash" );
+                $('#show_hide_password1 i').addClass( "fa-eye" );
+            }
+        });
+    });
+</script>
 <!-- Mirrored from light.pinsupreme.com/users_profile_small.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Apr 2020 15:55:48 GMT -->
 </html>
